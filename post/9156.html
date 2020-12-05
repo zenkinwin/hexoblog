@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="2017下半年高级信息系统项目管理师下午案例分析真题第2题同类型题目，又算全对，容易计算出错；  阅读下列说明，回答问题1至问题4，将解答填入答题纸的对应栏内。【说明】某信息系统项目包含A、B、C、D、E、F、G、H、I、J十个活动。各活动的历时、 成本估算值、活动逻辑关系如下表所示：  【问题1】（10分）（1）请计算活动 H、G 的总浮动时间和自由浮动时间。（2）请指出该项目的关键路径。（3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-案例题-2017年下-计算题">
+<meta property="og:url" content="https://www.zenwu.site/post/9156.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="2017下半年高级信息系统项目管理师下午案例分析真题第2题同类型题目，又算全对，容易计算出错；  阅读下列说明，回答问题1至问题4，将解答填入答题纸的对应栏内。【说明】某信息系统项目包含A、B、C、D、E、F、G、H、I、J十个活动。各活动的历时、 成本估算值、活动逻辑关系如下表所示：  【问题1】（10分）（1）请计算活动 H、G 的总浮动时间和自由浮动时间。（2）请指出该项目的关键路径。（3">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/10/12/dS9YqaBK6syiGkx.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/12/B3JKfZD7LmkVGRl.png">
+<meta property="article:published_time" content="2020-10-12T11:31:42.000Z">
+<meta property="article:modified_time" content="2020-11-03T15:18:42.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="计算题">
+<meta property="article:tag" content="EAC">
+<meta property="article:tag" content="ETC">
+<meta property="article:tag" content="BAC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/10/12/dS9YqaBK6syiGkx.png">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/9156.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>笔记-案例题-2017年下-计算题 | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/9156.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔记-案例题-2017年下-计算题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-10-12 19:31:42" itemprop="dateCreated datePublished" datetime="2020-10-12T19:31:42+08:00">2020-10-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-03 23:18:42" itemprop="dateModified" datetime="2020-11-03T23:18:42+08:00">2020-11-03</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">案例分析</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/%E8%AE%A1%E7%AE%97%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">计算题</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>2017下半年高级信息系统项目管理师下午案例分析真题第2题<br>同类型题目，又算全对，容易计算出错；</p>
+</blockquote>
+<p>阅读下列说明，回答问题1至问题4，将解答填入答题纸的对应栏内。<br><strong>【说明】</strong><br>某信息系统项目包含A、B、C、D、E、F、G、H、I、J十个活动。各活动的历时、 成本估算值、活动逻辑关系如下表所示：</p>
+<p><img src="https://i.loli.net/2020/10/12/dS9YqaBK6syiGkx.png" alt="各活动的历时、 成本估算值、活动逻辑关系"></p>
+<p><strong>【问题1】（10分）</strong><br>（1）请计算活动 H、G 的总浮动时间和自由浮动时间。<br>（2）请指出该项目的关键路径。<br>（3）请计算该项目的总工期。<br><strong>【问题2】（3分）</strong><br>项目经理在第9天结束时对项目进度进行统计，发现活动C完成了 50%，活动E完成了 50%，活动G 完成了100%，请判断该项目工期是否会受到影响？为什么？<br><strong>【问题3】（10分）</strong><br>结合问题2，项目经理在第9 天结束时对项目成本进行了估算，发现活动B的实际花费比预估多了1000元，活动D的实际花费比预估少了500元，活动C的实际花费为2000元，活动E的实际花费为1000元，其他活动的实际花费与预估一致。<br>（1）请计算该项目的完工预算BAC。<br>（2）请计算该时点计划值PV、挣值EV、成本绩效指数CPI、进度绩效指数SPI。<br><strong>【问题4】（3分）</strong><br>项目经理对项目进度、成本与计划不一致的原因进行了详细分析，并制定了改进措施。假设该改进措施是有效的，能确保项目后续过程中不会再发生类似问题，请计算该项目的完工估算EAC。</p>
+<a id="more"></a>
+
+<hr>
+<h4 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h4><p>这题不难，先画图，得出关键路径两条，分别是：ABCIJ、ADEHIJ<br>总工期17；<br>其中H在关键路径上，总浮动时间和自由浮动时间为 0 ；<br>而通过图计算出，G的总浮动时间为3，自由浮动时间为3 ；</p>
+<p><img src="https://i.loli.net/2020/10/12/B3JKfZD7LmkVGRl.png" alt="画图，答案上的"></p>
+<h4 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h4><p>C和G不影响进度，但由于E在关键路径上，且在第9天结束时候，计划要完成是100%，实际只完成了50%，因此对工期有影响。</p>
+<h4 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h4><p>BAC是所有任务PV相加，BAC=2000+3000+5000+3000+2000+2000+2000+3000+2000+3000=27000元</p>
+<p>而在第9周时候，<br>A，完成100%，AC=EV=PV=2000<br>B，完成100%，按题，AC=4000，EV=PV=3000<br>▲<em>C，完成50%，按题，AC=2000，EV=50%PV=2500，当前PV是第9天即计划的一半即50%原PV=2500</em>，（重点是这一点）<br>D，完成100%，按题，AC=2500，EV=PV=3000<br>▲<em>E，完成50%，按题，AC=1000，EV=50%PV=1000，当前PV是第9天内全部PV=100%PV=2000</em>，（重点是这一点）<br>F，完成100%，AC=EV=PV=2000<br>G，完成100%，AC=2000，EV=2000，当前PV是第9天内全部PV=2000</p>
+<p>所以当前的：<br>AC=2000+4000+2000+2500+1000+2000+2000= 15500<br>EV=2000+3000+2500+3000+1000+2000+2000= 15500<br>PV=2000+3000+2500+3000+2000+2000+2000= 16500</p>
+<p>SPI=EV/PV=15500/16500=0.94<br>CPI=EV/AC=15500/15500=1</p>
+<h4 id="问题4"><a href="#问题4" class="headerlink" title="问题4"></a>问题4</h4><p>由于是非典型偏差，所以，EAC=AC+(BAC-EV)<br>得EAC=15500+27000-15500=27000</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/e2ee.html" rel="bookmark">笔记-案例题-2016年下-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/1afc.html" rel="bookmark">笔记-案例题-2014年上-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/7014.html" rel="bookmark">笔记-案例题-2013年下-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/e6f8.html" rel="bookmark">笔记-案例题-2014年下-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/e95.html" rel="bookmark">笔记-案例题-2018年下-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/56f5.html" rel="bookmark">笔记-案例题-2015年下-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/beaf.html" rel="bookmark">笔记-案例题-2019年上-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/7e77.html" rel="bookmark">笔记-案例题-2019年下-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/9698.html" rel="bookmark">笔记-案例题-2015年上-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/2283.html" rel="bookmark">笔记-案例题-2016年上-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/8e8b.html" rel="bookmark">笔记-案例题-2017年上-计算题</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/6afa.html" rel="bookmark">笔记-案例题-2018年上-计算题</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/9156.html" title="笔记-案例题-2017年下-计算题">https://www.zenwu.site/post/9156.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 计算题</a>
+              <a href="/tags/EAC/" rel="tag"><i class="fa fa-tag"></i> EAC</a>
+              <a href="/tags/ETC/" rel="tag"><i class="fa fa-tag"></i> ETC</a>
+              <a href="/tags/BAC/" rel="tag"><i class="fa fa-tag"></i> BAC</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/ac0.html" rel="prev" title="笔记-案例题-2017年下-整体管理-变更管理">
+                  <i class="fa fa-chevron-left"></i> 笔记-案例题-2017年下-整体管理-变更管理
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/f87c.html" rel="next" title="笔记-案例题-2017年下-管理团队-冲突管理">
+                  笔记-案例题-2017年下-管理团队-冲突管理 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

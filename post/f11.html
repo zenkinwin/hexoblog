@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="1. 信息安全四个层次 设备安全 数据安全 内容安全 行为安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-信息系统安全管理-信息安全(混合)">
+<meta property="og:url" content="https://www.zenwu.site/post/f11.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="1. 信息安全四个层次 设备安全 数据安全 内容安全 行为安全">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-06T13:52:00.000Z">
+<meta property="article:modified_time" content="2020-11-28T13:12:54.836Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="安全管理">
+<meta property="article:tag" content="信息系统安全管理">
+<meta property="article:tag" content="安全属性">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/f11.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>笔记-信息系统安全管理-信息安全(混合) | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/f11.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔记-信息系统安全管理-信息安全(混合)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-06 21:52:00" itemprop="dateCreated datePublished" datetime="2020-05-06T21:52:00+08:00">2020-05-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-28 21:12:54" itemprop="dateModified" datetime="2020-11-28T21:12:54+08:00">2020-11-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">信息系统安全管理</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="1-信息安全四个层次"><a href="#1-信息安全四个层次" class="headerlink" title="1. 信息安全四个层次"></a>1. 信息安全四个层次</h3><ul>
+<li>设备安全</li>
+<li>数据安全</li>
+<li>内容安全</li>
+<li>行为安全<a id="more"></a>
+
+</li>
+</ul>
+<h3 id="2-信息安全属性及目标"><a href="#2-信息安全属性及目标" class="headerlink" title="2. 信息安全属性及目标"></a>2. 信息安全属性及目标</h3><h4 id="2-1-保密性（Confidentiality）"><a href="#2-1-保密性（Confidentiality）" class="headerlink" title="2.1. 保密性（Confidentiality）"></a>2.1. 保密性（Confidentiality）</h4><p>保密性是指<strong>阻止非授权的主体阅读信息</strong>。它是信息安全一诞生就具有的特性，也是信息安全主要的研究内容之一。更通俗地讲，就是说未授权的用户不能够获取敏感信息。对纸质文档信息，只需要保护好文件，不被非授权者接触即可。而对计算机及网络环境中的信息，不仅要阻止非授权者对信息的阅读，还要阻止授权者将其访问的信息传递给非授权者，以致信息被泄漏。</p>
+<p>指“<strong>信息不被泄露给未授权的个人、实体和过程或不被其使用的特性。</strong>”简单地说，就是确保所传输的数据只被其预定的接收者读取。保密性的破坏有多种可能，例如，信息的故意泄露或松懈的安全管理。数据的保密性可以通过下列技术来实现：</p>
+<ul>
+<li>最小授权原则</li>
+<li>防暴露</li>
+<li>数据加密、信息加密</li>
+<li>物理加密</li>
+</ul>
+<blockquote>
+<p>注意数字签名不能提高保密性</p>
+</blockquote>
+<h4 id="2-2-完整性-Integrity"><a href="#2-2-完整性-Integrity" class="headerlink" title="2.2. 完整性(Integrity)"></a>2.2. 完整性(Integrity)</h4><p>完整性是指<strong>防止信息被未经授权地篡改</strong>。它是保护信息保持原始的状态，使信息保持其真实性。如果这些信息被蓄意地修改、插入和删除等，形成虚假信息将带来严重的后果。</p>
+<p>指“<strong>保护资产的正确和完整的特性。</strong>”简单地说，就是确保接收到的数据就是发送的数据。数据不应该被改变，这需要某种方法去进行验证。确保数据完整性的技术包括：</p>
+<ul>
+<li>安全协议</li>
+<li>校检码</li>
+<li>密码校检</li>
+<li>CA认证</li>
+<li>数字签名</li>
+<li>防火墙系统</li>
+<li>传输安全（通信安全）</li>
+<li>入侵检测系统</li>
+</ul>
+<h4 id="2-3-可用性（Availability）"><a href="#2-3-可用性（Availability）" class="headerlink" title="2.3. 可用性（Availability）"></a>2.3. 可用性（Availability）</h4><p>可用性是指<strong>授权主体在需要信息时能及时得到服务的能力</strong>。可用性是在信息安全保护阶段对信息安全提出的新要求，也是在网络化空间中必须满足的一项信息安全要求。</p>
+<p>指“<strong>需要时，授权实体可以访问和使用的特性。</strong>”可用性确保数据在需要时可以使用。尽管传统上认为可用性并不属于信息安全的范畴，但随着拒绝服务攻击的逐渐盛行，要求数据总能保持可用性就显得十分关键了。一些确保可用性的技术如以下几个方面：</p>
+<ul>
+<li>综合保障</li>
+<li>磁盘和系统的容错</li>
+<li>可接受的登录及进程性能</li>
+<li>可靠的功能性的安全进程和机制</li>
+<li>数据冗余及备份</li>
+</ul>
+<p><strong>保密性、完整性和可用性</strong>是信息安全最为关注的三个属性，因此这三个特性也经常被称为<strong>信息安全三元组</strong>，<strong>这也是信息安全通常所强调的目标</strong>。</p>
+<h4 id="2-4-其他属性及目标"><a href="#2-4-其他属性及目标" class="headerlink" title="2.4. 其他属性及目标"></a>2.4. 其他属性及目标</h4><p>另外，信息安全也关注一些其他特性：</p>
+<p><strong>可控性</strong>是指对信息和信息系统实施安全监控管理，防止非法利用信息和信息系统。</p>
+<p><strong>真实性</strong>一般是指对信息的来源进行判断，能对伪造来源的信息予以鉴别。</p>
+<p><strong>可核查性</strong>是指系统实体的行为可以被独一无二地追溯到该实体的特性，这个特性就是要求该实体对其行为负责，可核查性也为探测和调查安全违规事件提供了可能性；</p>
+<p><strong>不可抵赖性</strong>是指建立有效的责任机制，防止用户否认其行为，这一点在电子商务中是极其重要的；</p>
+<ul>
+<li>数字签名</li>
+</ul>
+<p><strong>不可否认性</strong>是指在网络环境中，信息交换的双方不能否认其在交换过程中发送信息或接收信息的行为。</p>
+<p><strong>可靠性</strong>是指系统在规定的时间和给定的条件下，无故障地完成规定功能的概率，通常用平均故障间隔时阆(MeanTime Between Faihrce。MTBF)来度量。</p>
+<p>信息安全已经成为一门涉及计算机科学、网络技术、通信技术、密码技术、信息安全技术、应用数学、数论和信息论等多种学科的综合性学科。从广义上来说，凡是涉及网络上信息的<strong>保密性、完整性、可用性、真实性和可核查性</strong>的相关技术和理论都属于信息安全的研究领域。</p>
+<h3 id="3-信息安全管理体系"><a href="#3-信息安全管理体系" class="headerlink" title="3. 信息安全管理体系"></a>3. 信息安全管理体系</h3><p>信息安全管理体系（Information Security Management System）是组织在整体或特定范围内建立信息安全方针和目标以及完成这些目标所用方法的体系，它由建立信息安全的方针、原则、目标、方法、过程、核查表等要素组成。建立起信息安全管理体系后，具体的信息安全管理活动以信息安全管理体系为根据来开展。</p>
+<p>信息安全管理体系的建立是一个目标叠加的过程，是在不断发展变化的技术环境中进行的，是一个动态的、闭环的风险管理过程；要想获得有效的成果，需要从<strong>评估、响应、防护，到再评估</strong>。这些都需要企业从高层到具体工作人员的参与和重视，否则只能是流于形式与过程，起不到真正有效的安全控制的目的和作用。</p>
+<ul>
+<li>配备安全管理人员</li>
+<li>建立安全职能部门</li>
+<li>成立安全领导小组</li>
+<li>主要责任人出任领导</li>
+<li>建立信息安全保密管理部门</li>
+</ul>
+<blockquote>
+<p>在构建信息安全管理体系中，应建立起一套动态闭环的管理流程，这套流程指的是（  ）<br>答案：评估—响应—防护—评估</p>
+</blockquote>
+<h3 id="4-信息安全技术体系"><a href="#4-信息安全技术体系" class="headerlink" title="4. 信息安全技术体系"></a>4. 信息安全技术体系</h3><ul>
+<li>硬件系统安全和物理安全</li>
+<li>数据网络传输/交换安全、网络安全</li>
+<li>操作系统、数据库管理系统安全</li>
+<li>应用软件安全运行</li>
+</ul>
+<p>转载/整理：<br>希赛教育的试题解释：<a target="_blank" rel="noopener" href="https://www.educity.cn/">https://www.educity.cn/</a><br>信管网：<a target="_blank" rel="noopener" href="https://www.cnitpm.com/pm1/46124.html">https://www.cnitpm.com/pm1/46124.html</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/44f9.html" rel="bookmark">笔记-项目风险管理-转-从木桶效应谈对于安全管理的认识</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/b6e4.html" rel="bookmark">笔记-信息系统安全管理-信息安全保障系统</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/f7d4.html" rel="bookmark">笔记-信息系统安全管理-安全审计-作用</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/bf4e.html" rel="bookmark">笔记-信息系统安全管理-开放系统互连安全体系</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/b9cb.html" rel="bookmark">笔记-信息系统安全管理-数字证书</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/262d.html" rel="bookmark">笔记-信息系统安全管理-网络安全防御</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/d8b0.html" rel="bookmark">笔记-信息系统安全管理-安全审计</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/471.html" rel="bookmark">笔记-信息系统安全管理-计算机信息安全保护等级划分准则</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/7f22.html" rel="bookmark">笔记-信息系统安全管理-《信息安全等级保护管理办法》</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/f11.html" title="笔记-信息系统安全管理-信息安全(混合)">https://www.zenwu.site/post/f11.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 安全管理</a>
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 信息系统安全管理</a>
+              <a href="/tags/%E5%AE%89%E5%85%A8%E5%B1%9E%E6%80%A7/" rel="tag"><i class="fa fa-tag"></i> 安全属性</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/798e.html" rel="prev" title="网页变灰（局部/定时/政府网站）的兼容方法汇总">
+                  <i class="fa fa-chevron-left"></i> 网页变灰（局部/定时/政府网站）的兼容方法汇总
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/b9cb.html" rel="next" title="笔记-信息系统安全管理-数字证书">
+                  笔记-信息系统安全管理-数字证书 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="网络拓扑结构，包括总线型（bus）、星型（star）、环型（ring）、树型（tree）网络结构。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-计算机网络基础-计算机网络分类-总线型-星型-环状-树形-网状-网络拓扑结构">
+<meta property="og:url" content="https://www.zenwu.site/post/6484.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="网络拓扑结构，包括总线型（bus）、星型（star）、环型（ring）、树型（tree）网络结构。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/07/12/3wgjATJOfqPCHda.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/12/K19yJfDXEjAUFrS.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/12/HFmBQTt7ZUoDEA6.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/12/LQUgzSGchOadrC5.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/12/wtzcurPLQAGgEFN.png">
+<meta property="article:published_time" content="2020-07-12T08:38:44.000Z">
+<meta property="article:modified_time" content="2020-10-31T15:26:52.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="网络拓扑结构">
+<meta property="article:tag" content="总线型">
+<meta property="article:tag" content="星型">
+<meta property="article:tag" content="环状">
+<meta property="article:tag" content="树形">
+<meta property="article:tag" content="网状">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/07/12/3wgjATJOfqPCHda.png">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/6484.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>笔记-计算机网络基础-计算机网络分类-总线型-星型-环状-树形-网状-网络拓扑结构 | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/6484.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔记-计算机网络基础-计算机网络分类-总线型-星型-环状-树形-网状-网络拓扑结构
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-12 16:38:44" itemprop="dateCreated datePublished" datetime="2020-07-12T16:38:44+08:00">2020-07-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-10-31 23:26:52" itemprop="dateModified" datetime="2020-10-31T23:26:52+08:00">2020-10-31</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机网络基础</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>网络拓扑结构，包括总线型（bus）、星型（star）、环型（ring）、树型（tree）网络结构。</p>
+<a id="more"></a>
+
+
+<h3 id="总线形网络拓扑结构"><a href="#总线形网络拓扑结构" class="headerlink" title="总线形网络拓扑结构"></a>总线形网络拓扑结构</h3><p>总线拓扑结构所有设备连接到<strong>一条连接</strong>介质上。<strong>总线结构所需要的电缆数量少，线缆长度短，易于布线和维护。多个结点共用一条传输信道，信道利用率高。但不找诊断故障</strong>。</p>
+<p>所有入网设备共用一条物理传输线路，所有的数据发往同一条线路，并能够由附接在线路上的所有设备感知。入网设备通过专用的分接头接入线路。总线网拓扑是局域网的一种组成形式。</p>
+<p><img src="https://i.loli.net/2020/07/12/3wgjATJOfqPCHda.png" alt="总线形网络拓扑结构"></p>
+<p>总线网的特点：</p>
+<p>（1）多台机器共用一条传输信道，信道利用率较高；<br>（2）同一时刻只能由两台计算机通信；<br>（3）某个结点的故障不影响网络的工作；<br>（4）网络的延伸距离有限，结点数有限。</p>
+<p>适用场合：局域网，对实时性要求不高的环境。</p>
+<h2 id="星形网络拓扑结构"><a href="#星形网络拓扑结构" class="headerlink" title="星形网络拓扑结构"></a>星形网络拓扑结构</h2><p>星型拓扑结构是<strong>一个中心，多个分节点</strong>。它<strong>结构简单，连接方便</strong>，管理和维护都相对容易，而且<strong>扩展性强</strong>。网络延迟时间较小，<strong>传输误差低</strong>。中心无故障，一般网络没问题。中心故障，网络就出问题，同时<strong>共享能力差</strong>，通信线路利用率不高。</p>
+<p>以一台中心处理机（通信设备）为主而构成的网络，其它入网机器仅与该中心处理机之间有直接的物理链路，中心处理机采用分时或轮询的方法为入网机器服务，所有的数据必须经过中心处理机。</p>
+<p><img src="https://i.loli.net/2020/07/12/K19yJfDXEjAUFrS.png" alt="星形网络拓扑结构"></p>
+<p>星形网的特点：</p>
+<p>（1）网络结构简单，便于管理（集中式）；<br>（2）每台入网机均需物理线路与处理机互连，线路利用率低；<br>（3）处理机负载重（需处理所有的服务），因为任何两台入网机之间交换信息，都必须通过中心处理机；<br>（4）入网主机故障不影响整个网络的正常工作，中心处理机的故障将导致网络的瘫痪。</p>
+<p>适用场合：局域网、广域网。</p>
+<h2 id="环形网络拓扑结构"><a href="#环形网络拓扑结构" class="headerlink" title="环形网络拓扑结构"></a>环形网络拓扑结构</h2><p>环形拓扑结构是节点形成一个<strong>闭合环</strong>。<strong>工作站少，节约设备</strong>。当然，这样就导致一个节点出问题，网络就会出问题，而且不好诊断故障。</p>
+<p>入网设备通过转发器接入网络，每个转发器仅与两个相邻的转发器有直接的物理线路。环形网的数据传输具有单向性，一个转发器发出的数据只能被另一个转发器接收并转发。所有的转发器及其物理线路构成了一个环状的网络系统。</p>
+<p><img src="https://i.loli.net/2020/07/12/HFmBQTt7ZUoDEA6.png" alt="环形网络拓扑结构"></p>
+<p>环形网特点：</p>
+<p>（1）实时性较好（信息在网中传输的最大时间固定）；<br>（2）每个结点只与相邻两个结点有物理链路；<br>（3）传输控制机制比较简单；<br>（4）某个结点的故障将导致物理瘫痪；<br>（5）单个环网的结点数有限。</p>
+<p>适用场合：局域网，实时性要求较高的环境。</p>
+<h2 id="树型网络拓扑结构"><a href="#树型网络拓扑结构" class="headerlink" title="树型网络拓扑结构"></a>树型网络拓扑结构</h2><p>树形拓扑结构从总线拓扑演变而来。形状像一棵倒置的树,顶端是树根，树根以下带分支，每个分支还可再带子分支，树根接收各站点发送的数据，然后再广播发送到全网。好扩展，容易诊断错误，但对根部要求高。</p>
+<p><img src="https://i.loli.net/2020/07/12/LQUgzSGchOadrC5.png" alt="树型网络拓扑结构"></p>
+<h2 id="网状网络拓扑结构"><a href="#网状网络拓扑结构" class="headerlink" title="网状网络拓扑结构"></a>网状网络拓扑结构</h2><p>网形拓扑结构是应用最广泛的，它的优点是不受瓶颈问题和失效问题的影响，一旦线路出问题，可以做其他线路，但太复杂，成本高。</p>
+<p>利用专门负责数据通信和传输的结点机构成的网状网络，入网设备直接接入结点机进行通信。网状网络通常利用冗余的设备和线路来提高网络的可靠性，因此，结点机可以根据当前的网络信息流量有选择地将数据发往不同的线路。</p>
+<p><img src="https://i.loli.net/2020/07/12/wtzcurPLQAGgEFN.png" alt="网状网络拓扑结构"></p>
+<p>适用场合：主要用于地域范围大、入网主机多（机型多）的环境，常用于构造广域网络。 </p>
+<p>参考：</p>
+<ul>
+<li>Draught_Bear：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Draught_Bear/article/details/80784777">总线型，星型，环状，树形,网状拓扑结构</a></li>
+<li>一只懒懒的coder：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011990285/article/details/30286785]https://blog.csdn.net/u011990285/article/details/30286785">局域网常用的几种网络拓扑结构及其特点</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/6484.html" title="笔记-计算机网络基础-计算机网络分类-总线型-星型-环状-树形-网状-网络拓扑结构">https://www.zenwu.site/post/6484.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 网络拓扑结构</a>
+              <a href="/tags/%E6%80%BB%E7%BA%BF%E5%9E%8B/" rel="tag"><i class="fa fa-tag"></i> 总线型</a>
+              <a href="/tags/%E6%98%9F%E5%9E%8B/" rel="tag"><i class="fa fa-tag"></i> 星型</a>
+              <a href="/tags/%E7%8E%AF%E7%8A%B6/" rel="tag"><i class="fa fa-tag"></i> 环状</a>
+              <a href="/tags/%E6%A0%91%E5%BD%A2/" rel="tag"><i class="fa fa-tag"></i> 树形</a>
+              <a href="/tags/%E7%BD%91%E7%8A%B6/" rel="tag"><i class="fa fa-tag"></i> 网状</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/2f70.html" rel="prev" title="笔记-计算机网络基础-5G">
+                  <i class="fa fa-chevron-left"></i> 笔记-计算机网络基础-5G
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/b98a.html" rel="next" title="笔记-知识产权与标准化知识-中华人民共和国政府采购法">
+                  笔记-知识产权与标准化知识-中华人民共和国政府采购法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

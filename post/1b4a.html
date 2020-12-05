@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="一、UML 介绍Unified Modeling Language(UML)，又称统一建模语言或标准建模语言，是始于1997年一个OMG标准，它是一个支持模型化和软件系统开发的图形化语言，为软件开发的所有阶段提供模型化和可视化支持，包括由需求分析到规格，到构造和配置。UML规范用来描述建模的概念有，类（对象的）、对象、关联、职责、行为、接口、用例、包、顺序、协作，以及转态。常见的可视化的程序设计语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记整理-信息系统开发基础-uml">
+<meta property="og:url" content="https://www.zenwu.site/post/1b4a.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="一、UML 介绍Unified Modeling Language(UML)，又称统一建模语言或标准建模语言，是始于1997年一个OMG标准，它是一个支持模型化和软件系统开发的图形化语言，为软件开发的所有阶段提供模型化和可视化支持，包括由需求分析到规格，到构造和配置。UML规范用来描述建模的概念有，类（对象的）、对象、关联、职责、行为、接口、用例、包、顺序、协作，以及转态。常见的可视化的程序设计语">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/04/25/tNzxd6Kio9TrByp.png">
+<meta property="og:image" content="https://i.loli.net/2020/04/25/4GA6lNYaB9TmpfI.png">
+<meta property="article:published_time" content="2020-04-25T13:50:02.000Z">
+<meta property="article:modified_time" content="2020-10-31T13:58:35.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="信息系统开发基础">
+<meta property="article:tag" content="uml">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/04/25/tNzxd6Kio9TrByp.png">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/1b4a.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>笔记整理-信息系统开发基础-uml | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/1b4a.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔记整理-信息系统开发基础-uml
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-25 21:50:02" itemprop="dateCreated datePublished" datetime="2020-04-25T21:50:02+08:00">2020-04-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-10-31 21:58:35" itemprop="dateModified" datetime="2020-10-31T21:58:35+08:00">2020-10-31</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">信息系统开发基础</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="一、UML-介绍"><a href="#一、UML-介绍" class="headerlink" title="一、UML 介绍"></a>一、UML 介绍</h2><p>Unified Modeling Language(UML)，又称统一建模语言或标准建模语言，是始于1997年一个OMG标准，它是一个支持模型化和软件系统开发的图形化语言，为软件开发的所有阶段提供模型化和可视化支持，包括由需求分析到规格，到构造和配置。UML规范用来描述建模的概念有，类（对象的）、对象、关联、职责、行为、接口、用例、包、顺序、协作，以及转态。常见的可视化的程序设计语言工具包括Visual Basic、Visual C++、Delphi等。</p>
+<p>UML的目标是以面向对象图的方式来描述任何类型的系统，具有很宽的应用领域。其中最常用的是建立软件系统的模型，但它同样可以用于描述非软件领域的系统，如机械系统、企业机构或业务过程，以及处理复杂数据的信息系统、具有实时要求的工业系统或工业过程等。<strong>总之，UML是一个通用的标准建模语言，可以对任何具有静态结构和动态行为的系统进行建模。</strong></p>
+<a id="more"></a>
+
+<p>UML标准并没有定义一种标准的开发过程，但它比较适用于 <strong><em>迭代式</em></strong> 的开发过程，是为支持大部分现存的面向对象开发过程而设计的。</p>
+<p>此外，UML适用于系统开发过程中从需求规格描述到系统完成后测试的不同阶段。</p>
+<ul>
+<li>在需求分析阶段，可以用用例来捕获用户需求。通过用例建模，描述对系统感兴趣的外部角色及其对系统（用例）的功能要求。</li>
+<li>分析阶段主要关心问题域中的主要概念（如抽象、类和对象等）和机制，需要识别这些类以及它们相互间的关系，并用UML类图来描述。为实现用例，类之间需要协作，这可以用UML动态模型来描述。</li>
+<li>在分析阶段，只对问题域的对象（现实世界的概念）建模，而不考虑定义软件系统中技术细节的类（如处理用户接口、数据库、通信和并行性等问题的类）。</li>
+<li>这些技术细节将在设计阶段引入，因此设计阶段为构造阶段提供更详细的规格说明。</li>
+</ul>
+<p><strong>UML是统一建模语言，是一种可视化的面向对象建模语言，是一种用来对真实世界物理进行建模的标准标记，用图形方式表现典型的面向对象系统的整个结构。</strong>它的作用域不局限于支持面向对象的分析与设计，还支持从需求分析开始的软件开发的全过程。</p>
+<p>UML的概念包括了UML语义（Semantics）和UML表示符（Notation）两个部分。UML语义定义了静态模型和动态模型。结构模型强调系统的对象结构，入对象的类、接口、属性和关系；行为模型关注的是系统对象的行为动作，如对象的方法、交互、协作和状态。UML表示符为开发者或开发工具使用这些图形符号和文本语法为系统建模提供了标准。重要内容由9种图来定义，包括用例图、类图、对象图、状态图、构件图、部署图、协作图、交互序列图、活动图。</p>
+<h2 id="二、UML-构成"><a href="#二、UML-构成" class="headerlink" title="二、UML 构成"></a>二、UML 构成</h2><p><img src="https://i.loli.net/2020/04/25/tNzxd6Kio9TrByp.png" alt="image.png"></p>
+<h2 id="三、UML-特点"><a href="#三、UML-特点" class="headerlink" title="三、UML 特点"></a>三、UML 特点</h2><p>(1）UML统一了各种方法对不同类型的系统、不同开发阶段以及不同内部概念的不同观点，从而有效地消除了各种建模语言之间不必要的差异，它实际上是一种通用的建模语言。</p>
+<p>（2）UML建模能力比其他面向对象建模方法更强。它不仅适合于一般系统的开发，而且对并行、分布式系统的建模尤为适宜。</p>
+<p>（3）UML是一种建模语言，而不是一个开发过程。</p>
+<h2 id="四、UML2-0有14图"><a href="#四、UML2-0有14图" class="headerlink" title="四、UML2.0有14图"></a>四、UML2.0有14图</h2><p>在面向对象开发方法中，用UML表示软件体系架构，用到的5个视图是：用例视图、逻辑视图、进程视图、构件视图和部署视图。</p>
+<p>UML提供了如下9种图来对系统建模：</p>
+<ol>
+<li>用例图（Use Case Diagram）</li>
+<li>类图（Class Diagram）</li>
+<li>对象（Object Diagram）</li>
+<li>构件图（Component Diagram）</li>
+<li>部署图（Deployment Diagram）</li>
+<li>状态图（State Diagram）</li>
+<li>序列图（Sequence Diagram）</li>
+<li>通信图（Communication Diagram）</li>
+<li>活动图（Activity Diagram）</li>
+<li>定时图（Timing diagram）</li>
+<li>组合结构图(composite structure diagram)</li>
+<li>制品图(Artifact diagram)</li>
+<li>包图(Package diagram)</li>
+<li>交互概览图(Interaction overview diagram):</li>
+</ol>
+<h3 id="1、用例图（Use-Case-Diagram）"><a href="#1、用例图（Use-Case-Diagram）" class="headerlink" title="1、用例图（Use Case Diagram）"></a>1、用例图（Use Case Diagram）</h3><p>用例图表示一个系统中所有的用例与所有外部参与者的交互，展现一组用例、参与者（一种特殊的类）及它们之间的关系，它描述了系统与外部系统及用户之间的交互。</p>
+<p>描述角色以及角色与用例之间的连接关系。说明的是谁要使用系统，以及他们使用该系统可以做些什么。一个用例图包含了多个模型元素，如系统、参与者和用例，并且显示了这些元素之间的各种关系。</p>
+<p>用例图给出系统的<strong>静态用例视图</strong>。这些图在对系统的行为进行组织和建模时是非常重要的。 </p>
+<p>主要的作用有三个：<br>（1）获取需求；<br>（2）指导测试；<br>（3）还可在整个过程中的其它工作流起到指导作用。</p>
+<p>  <img src="https://i.loli.net/2020/04/25/4GA6lNYaB9TmpfI.png" alt="用例图表示一个系统中所有的用例与所有外部参与者的交互"></p>
+<h3 id="2、类图（Class-Diagram）"><a href="#2、类图（Class-Diagram）" class="headerlink" title="2、类图（Class Diagram）"></a>2、类图（Class Diagram）</h3><p>类图描述了类、接口、协作以及它们之间的关系。</p>
+<p>在面向对象系统的建模中所建立的<strong>最常见的图</strong>就是类图。类图给出了系统的静态设计视图。包含主动类的类图给出了系统的静态进程视图。</p>
+<p>类图是一种模型类型，确切的说，是一种<strong>静态模型类型</strong>。</p>
+<h3 id="3、对象图（Object-Diagram）"><a href="#3、对象图（Object-Diagram）" class="headerlink" title="3、对象图（Object Diagram）"></a>3、对象图（Object Diagram）</h3><p>描述了类图某一时刻的实际例子，描述了这个时刻<strong>对象与对象间</strong>的关系。</p>
+<p>和类图一样，这些图给出系统的<strong>静态设计视图</strong>或静态进程视图，但它们是从真实案例或原型案例的角度建立的。</p>
+<h3 id="4、构件图（Component-Diagram）"><a href="#4、构件图（Component-Diagram）" class="headerlink" title="4、构件图（Component Diagram）"></a>4、构件图（Component Diagram）</h3><p>构件图描述一个封装的类和它的接口、 端口，以及由内嵌的构件和连接件构成的内部结构。构件图用于表示系统的<strong>静态设计实现视图</strong>。对于由小的部件构建大的系统来说，构件图是很重要的。构件图是类图的变体。</p>
+<h3 id="5、部署图（Deployment-Diagram）"><a href="#5、部署图（Deployment-Diagram）" class="headerlink" title="5、部署图（Deployment Diagram）"></a>5、部署图（Deployment Diagram）</h3><p>部署图是用来建模系统的<strong>物理部署</strong>。例如计算机和设备，以及它们之间是如何连接的。部署图的使用者是开发人员、系统集成人员和测试人员。</p>
+<p>部署图给出了架构的<strong>静态部署视图</strong></p>
+<h3 id="6、状态图（State-Diagram）"><a href="#6、状态图（State-Diagram）" class="headerlink" title="6、状态图（State Diagram）"></a>6、状态图（State Diagram）</h3><p>状态图（state diagram）：展现一个状态机，它由<strong>状态</strong>、<strong>转移</strong>、<strong>事件</strong>和<strong>活动</strong>组成。状态图展现了对象的<strong>动态视图</strong>。它对于接口、类或协作的行为建模尤为重要，而且它强调事件导致的对象行为，这非常有助于对反应式系统建模。</p>
+<p>依然是<strong>静态设计视图</strong>或静态进程视图。</p>
+<h3 id="7、顺序图（序列图）（Sequence-Diagram）"><a href="#7、顺序图（序列图）（Sequence-Diagram）" class="headerlink" title="7、顺序图（序列图）（Sequence Diagram）"></a>7、顺序图（序列图）（Sequence Diagram）</h3><p>顺序图（序列图）可以根据对象间如何<strong>交互</strong>来展示系统的行为。</p>
+<p>顺序图（序列图）用来描述对象之间动态的交互关系，着重体现对象间消息传递的时间顺序。可为一个<strong>协作建模</strong>。</p>
+<p>顺序图（序列图）用来描述对象之间动态的交互关系来实现一个用例，序列图着重体现对象间消息传递的时间顺序。</p>
+<h3 id="8、通信图（协作图）（Communication-Diagram）"><a href="#8、通信图（协作图）（Communication-Diagram）" class="headerlink" title="8、通信图（协作图）（Communication Diagram）"></a>8、通信图（协作图）（Communication Diagram）</h3><p>通信图，又叫协作图（在UML1.X版本中，通信图称为协作图(ollaboration diagram)），它和序列图相似，显示对象间的动态合作关系。</p>
+<p>可以看成是类图和顺序图的交集，协作图建模对象或者角色，以及它们彼此之间是如何通信的。</p>
+<p>如果<strong>强调时间和顺序</strong>，则使用<em>序列图</em>；如果<strong>强调上下级关系</strong>，则选择<em>协作图</em>。</p>
+<p>这两种图（序列图、通信图）合称为 <strong>交互图</strong>。强调的是对象之间的组织关系。</p>
+<h3 id="9、活动图（Activity-Diagram）"><a href="#9、活动图（Activity-Diagram）" class="headerlink" title="9、活动图（Activity Diagram）"></a>9、活动图（Activity Diagram）</h3><p>活动图将进程或其他计算结构展示为计算内部一步步的控制流和数据流。</p>
+<p>活动图专注于系统的动态视图。它对系统的功能建模和业务流程建模特别重要，并强调对象间的控制流程。</p>
+<h3 id="10、定时图（timing-diagram）"><a href="#10、定时图（timing-diagram）" class="headerlink" title="10、定时图（timing diagram）"></a>10、定时图（timing diagram）</h3><p>定时图是一种<strong>交互图</strong>，它展现了消息跨越不同对象或角色的实际时间，而不仅仅只是关心消息的相对顺序。</p>
+<h3 id="11、组合结构图-composite-structure-diagram"><a href="#11、组合结构图-composite-structure-diagram" class="headerlink" title="11、组合结构图(composite structure diagram)"></a>11、组合结构图(composite structure diagram)</h3><p>组合结构图描述结构化类(例如，构件或类)的内部结构，包括结构化类与系统其余部分的交互点。组合结构图用于画出结构化类的内部内容。</p>
+<h3 id="12、制品图-Artifact-diagram"><a href="#12、制品图-Artifact-diagram" class="headerlink" title="12、制品图(Artifact diagram)"></a>12、制品图(Artifact diagram)</h3><p>制品图描述计算机中一个系统的物理结构。制品包括文件、数据库和类似的物理比特集合。制品图通常与部署图一起使用。制品也给出了它们实现的类和构件。</p>
+<h3 id="13、包图-Package-diagram"><a href="#13、包图-Package-diagram" class="headerlink" title="13、包图(Package diagram)"></a>13、包图(Package diagram)</h3><p>包图描述由模型本身分解而成的组织单元，以及它们之间的依赖关系。</p>
+<h3 id="14、交互概览图-Interaction-overview-diagram"><a href="#14、交互概览图-Interaction-overview-diagram" class="headerlink" title="14、交互概览图(Interaction overview diagram):"></a>14、交互概览图(Interaction overview diagram):</h3><p>交互概览图是活动图和顺序图的混合物。</p>
+<p>转载/参考：<br>什么是UML，UML类图：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40138785/article/details/81065979">https://blog.csdn.net/qq_40138785/article/details/81065979</a><br>希赛教育的试题：<a target="_blank" rel="noopener" href="https://www.educity.cn/">https://www.educity.cn/</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/39dc.html" rel="bookmark">笔记-信息系统开发基础-uml-uml类图关系</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/ce72.html" rel="bookmark">笔记-信息系统开发基础-信息系统开发模型</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/c8ab.html" rel="bookmark">笔记-信息系统开发基础-信息系统生命周期</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/7b8c.html" rel="bookmark">笔记-信息系统开发基础-信息系统规划方法-信息系统规划流程</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/8dc2.html" rel="bookmark">笔记-信息系统开发基础-信息系统开发方法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/7d7d.html" rel="bookmark">笔记-信息系统开发基础-架构设计-软件体系结构评估方式</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/606f.html" rel="bookmark">笔记-信息系统开发基础-架构设计-软件架构主要职责</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/6432.html" rel="bookmark">笔记-信息系统开发基础-架构设计-软件架构风格</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/ec37.html" rel="bookmark">笔记-信息系统开发基础-架构设计-软件系统架构视图</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/1b4a.html" title="笔记整理-信息系统开发基础-uml">https://www.zenwu.site/post/1b4a.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> 信息系统开发基础</a>
+              <a href="/tags/uml/" rel="tag"><i class="fa fa-tag"></i> uml</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/8dc2.html" rel="prev" title="笔记-信息系统开发基础-信息系统开发方法">
+                  <i class="fa fa-chevron-left"></i> 笔记-信息系统开发基础-信息系统开发方法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/39dc.html" rel="next" title="笔记-信息系统开发基础-uml-uml类图关系">
+                  笔记-信息系统开发基础-uml-uml类图关系 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

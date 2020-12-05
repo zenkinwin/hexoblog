@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="SiteAzure 标签说明 Version 1.6.2.0 ，版权所有：动易软件研发中心">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SiteAzure-Partial-v1 20171024">
+<meta property="og:url" content="https://www.zenwu.site/post/b51e.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="SiteAzure 标签说明 Version 1.6.2.0 ，版权所有：动易软件研发中心">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-10-24T11:08:38.000Z">
+<meta property="article:modified_time" content="2020-05-21T04:12:15.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="vs code">
+<meta property="article:tag" content="SiteAzure">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/b51e.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>SiteAzure-Partial-v1 20171024 | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/b51e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SiteAzure-Partial-v1 20171024
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-10-24 19:08:38" itemprop="dateCreated datePublished" datetime="2017-10-24T19:08:38+08:00">2017-10-24</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-05-21 12:12:15" itemprop="dateModified" datetime="2020-05-21T12:12:15+08:00">2020-05-21</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">工作技巧</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="SiteAzure-标签说明"><a href="#SiteAzure-标签说明" class="headerlink" title="SiteAzure 标签说明"></a>SiteAzure 标签说明</h1><blockquote>
+<p>Version <code>1.6.2.0</code> ，版权所有：动易软件研发中心</p>
+</blockquote>
+<a id="more"></a> 
+
+<h3 id="标签名：专题位置导航-cshtml"><a href="#标签名：专题位置导航-cshtml" class="headerlink" title="标签名：专题位置导航.cshtml"></a>标签名：专题位置导航.cshtml</h3><blockquote>
+<p>描述：专题位置导航</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SpecialSection</td>
+<td>SpecialSection</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>Special</td>
+<td>Special</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：专题图片列表-cshtml"><a href="#标签名：专题图片列表-cshtml" class="headerlink" title="标签名：专题图片列表.cshtml"></a>标签名：专题图片列表.cshtml</h3><blockquote>
+<p>描述：专题图片列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>150</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：专题子栏目列表-cshtml"><a href="#标签名：专题子栏目列表-cshtml" class="headerlink" title="标签名：专题子栏目列表.cshtml"></a>标签名：专题子栏目列表.cshtml</h3><blockquote>
+<p>描述：专题子栏目列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SpecialIdentifier</td>
+<td>专题标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>Count</td>
+<td>输出数量</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>99999</td>
+</tr>
+<tr>
+<td>ShowLi</td>
+<td>是否包含Li</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ShowSplit</td>
+<td>是否显示分隔</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：专题小图片列表-cshtml"><a href="#标签名：专题小图片列表-cshtml" class="headerlink" title="标签名：专题小图片列表.cshtml"></a>标签名：专题小图片列表.cshtml</h3><blockquote>
+<p>描述：专题小图片列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>Count</td>
+<td>专题数量</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：专题标题列表-cshtml"><a href="#标签名：专题标题列表-cshtml" class="headerlink" title="标签名：专题标题列表.cshtml"></a>标签名：专题标题列表.cshtml</h3><blockquote>
+<p>描述：专题标题列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Count</td>
+<td>输出数量</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>99999</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>150</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：专题焦点图-cshtml"><a href="#标签名：专题焦点图-cshtml" class="headerlink" title="标签名：专题焦点图.cshtml"></a>标签名：专题焦点图.cshtml</h3><blockquote>
+<p>描述：专题焦点图</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>内容长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>400</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>300</td>
+</tr>
+<tr>
+<td>PicTitle</td>
+<td>当PicTitle为true时使用图片切换</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>输出数量</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>5</td>
+</tr>
+<tr>
+<td>SpecialSectionIdentifier</td>
+<td>栏目标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：位置导航-cshtml"><a href="#标签名：位置导航-cshtml" class="headerlink" title="标签名：位置导航.cshtml"></a>标签名：位置导航.cshtml</h3><blockquote>
+<p>描述：位置导航</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Node</td>
+<td>节点实体</td>
+<td>String</td>
+<td>Text</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：全文检索分页-cshtml"><a href="#标签名：全文检索分页-cshtml" class="headerlink" title="标签名：全文检索分页.cshtml"></a>标签名：全文检索分页.cshtml</h3><blockquote>
+<p>描述：全文检索分页</p>
+</blockquote>
+<p>标签无参数</p>
+<h3 id="标签名：分享按钮-cshtml"><a href="#标签名：分享按钮-cshtml" class="headerlink" title="标签名：分享按钮.cshtml"></a>标签名：分享按钮.cshtml</h3><blockquote>
+<p>描述：分享按钮</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Style</td>
+<td>图标风格</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>图标尺寸</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>24</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：友情链接列表-下拉式-cshtml"><a href="#标签名：友情链接列表-下拉式-cshtml" class="headerlink" title="标签名：友情链接列表-下拉式.cshtml"></a>标签名：友情链接列表-下拉式.cshtml</h3><blockquote>
+<p>描述：友情链接列表-下拉式</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>9999</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：友情链接列表-cshtml"><a href="#标签名：友情链接列表-cshtml" class="headerlink" title="标签名：友情链接列表.cshtml"></a>标签名：友情链接列表.cshtml</h3><blockquote>
+<p>描述：友情链接列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>9999</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：友情链接图片列表-cshtml"><a href="#标签名：友情链接图片列表-cshtml" class="headerlink" title="标签名：友情链接图片列表.cshtml"></a>标签名：友情链接图片列表.cshtml</h3><blockquote>
+<p>描述：友情链接图片列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>9999</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>320</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>240</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：发文部门位置导航-cshtml"><a href="#标签名：发文部门位置导航-cshtml" class="headerlink" title="标签名：发文部门位置导航.cshtml"></a>标签名：发文部门位置导航.cshtml</h3><blockquote>
+<p>描述：发文部门位置导航</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Node</td>
+<td>节点模型对象</td>
+<td>String</td>
+<td>Text</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：发表评论-cshtml"><a href="#标签名：发表评论-cshtml" class="headerlink" title="标签名：发表评论.cshtml"></a>标签名：发表评论.cshtml</h3><blockquote>
+<p>描述：发表评论</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>commentId</td>
+<td>评论Id</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：图片分页列表-cshtml"><a href="#标签名：图片分页列表-cshtml" class="headerlink" title="标签名：图片分页列表.cshtml"></a>标签名：图片分页列表.cshtml</h3><blockquote>
+<p>描述：图片分页列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>320</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>240</td>
+</tr>
+<tr>
+<td>DispatchDepartment</td>
+<td>部门标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：图片列表-cshtml"><a href="#标签名：图片列表-cshtml" class="headerlink" title="标签名：图片列表.cshtml"></a>标签名：图片列表.cshtml</h3><blockquote>
+<p>描述：图片列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>320</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>240</td>
+</tr>
+<tr>
+<td>ShowLinkTip</td>
+<td>是否显示链接提示</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：图片图文列表-cshtml"><a href="#标签名：图片图文列表-cshtml" class="headerlink" title="标签名：图片图文列表.cshtml"></a>标签名：图片图文列表.cshtml</h3><blockquote>
+<p>描述：图片图文列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>内容长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>DisplayNodeName</td>
+<td>显示节点名称</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>150</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：图片标题列表-cshtml"><a href="#标签名：图片标题列表-cshtml" class="headerlink" title="标签名：图片标题列表.cshtml"></a>标签名：图片标题列表.cshtml</h3><blockquote>
+<p>描述：图片标题列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ShowNumber</td>
+<td>是否显示序号</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>NumberFormat</td>
+<td>序号的数字格式</td>
+<td>String</td>
+<td>Text</td>
+<td>00</td>
+</tr>
+<tr>
+<td>ShowNode</td>
+<td>是否显示所属节点</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>NodePrefix</td>
+<td>所属节点前插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>[</td>
+</tr>
+<tr>
+<td>NodeSuffix</td>
+<td>所属节点后插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>]</td>
+</tr>
+<tr>
+<td>ShowDate</td>
+<td>是否显示发布时间</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DateFormat</td>
+<td>发布时间日期格式</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>yyyy-MM-dd</td>
+</tr>
+<tr>
+<td>ShowHits</td>
+<td>是否显示点击数</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>HitsSuffix</td>
+<td>点击数后插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td></td>
+</tr>
+<tr>
+<td>ShowLinkTip</td>
+<td>是否显示链接提示</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：层级节点-cshtml"><a href="#标签名：层级节点-cshtml" class="headerlink" title="标签名：层级节点.cshtml"></a>标签名：层级节点.cshtml</h3><blockquote>
+<p>描述：层级节点</p>
+</blockquote>
+<p>标签无参数</p>
+<h3 id="标签名：广告版位-固定-cshtml"><a href="#标签名：广告版位-固定-cshtml" class="headerlink" title="标签名：广告版位-固定.cshtml"></a>标签名：广告版位-固定.cshtml</h3><blockquote>
+<p>描述：广告版位-固定</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>版位Id</td>
+<td>Int32</td>
+<td>Integer</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：广告版位-图片列表-cshtml"><a href="#标签名：广告版位-图片列表-cshtml" class="headerlink" title="标签名：广告版位-图片列表.cshtml"></a>标签名：广告版位-图片列表.cshtml</h3><blockquote>
+<p>描述：广告版位-图片列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>版位Id</td>
+<td>Int32</td>
+<td>Integer</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：广告版位-漂浮-cshtml"><a href="#标签名：广告版位-漂浮-cshtml" class="headerlink" title="标签名：广告版位-漂浮.cshtml"></a>标签名：广告版位-漂浮.cshtml</h3><blockquote>
+<p>描述：广告版位-漂浮</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>版位Id</td>
+<td>Int32</td>
+<td>Integer</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：广告版位-焦点图-cshtml"><a href="#标签名：广告版位-焦点图-cshtml" class="headerlink" title="标签名：广告版位-焦点图.cshtml"></a>标签名：广告版位-焦点图.cshtml</h3><blockquote>
+<p>描述：广告版位-焦点图</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>400</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>300</td>
+</tr>
+<tr>
+<td>PicTitle</td>
+<td>当PicTitle为true时使用图片切换</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>版位Id</td>
+<td>Int32</td>
+<td>Integer</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：广告版位-背景焦点图-cshtml"><a href="#标签名：广告版位-背景焦点图-cshtml" class="headerlink" title="标签名：广告版位-背景焦点图.cshtml"></a>标签名：广告版位-背景焦点图.cshtml</h3><blockquote>
+<p>描述：广告版位-背景焦点图</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>400</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>300</td>
+</tr>
+<tr>
+<td>PicTitle</td>
+<td>当PicTitle为true时使用图片切换</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>版位Id</td>
+<td>Int32</td>
+<td>Integer</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：文章图文列表-cshtml"><a href="#标签名：文章图文列表-cshtml" class="headerlink" title="标签名：文章图文列表.cshtml"></a>标签名：文章图文列表.cshtml</h3><blockquote>
+<p>描述：文章图文列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>内容长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>DisplayNodeName</td>
+<td>显示节点名称</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>150</td>
+</tr>
+<tr>
+<td>DispatchDepartment</td>
+<td>部门标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：文章图片列表-cshtml"><a href="#标签名：文章图片列表-cshtml" class="headerlink" title="标签名：文章图片列表.cshtml"></a>标签名：文章图片列表.cshtml</h3><blockquote>
+<p>描述：文章图片列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>320</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>240</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：文章头条列表-cshtml"><a href="#标签名：文章头条列表-cshtml" class="headerlink" title="标签名：文章头条列表.cshtml"></a>标签名：文章头条列表.cshtml</h3><blockquote>
+<p>描述：文章头条列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TopicNum</td>
+<td>头条数</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>1</td>
+</tr>
+<tr>
+<td>TopicTitleLength</td>
+<td>头条标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>TopicContentLength</td>
+<td>头条内容长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>TopiclDisplayDateTime</td>
+<td>头条显示日期格式</td>
+<td>String</td>
+<td>ComboBox</td>
+<td></td>
+</tr>
+<tr>
+<td>TopicDisplayPic</td>
+<td>头条显示图片</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Rank</td>
+<td>是否排序</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RankUpNum</td>
+<td>前几条排序</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>3</td>
+</tr>
+<tr>
+<td>TitleLength</td>
+<td>普通信息标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>DisplayDateTime</td>
+<td>普通信息显示日期格式</td>
+<td>String</td>
+<td>ComboBox</td>
+<td></td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：文章标题列表-cshtml"><a href="#标签名：文章标题列表-cshtml" class="headerlink" title="标签名：文章标题列表.cshtml"></a>标签名：文章标题列表.cshtml</h3><blockquote>
+<p>描述：用于显示文章标题链接的列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ShowNumber</td>
+<td>是否显示序号</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>NumberFormat</td>
+<td>序号的数字格式</td>
+<td>String</td>
+<td>Text</td>
+<td>00</td>
+</tr>
+<tr>
+<td>ShowNode</td>
+<td>是否显示所属节点</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>NodePrefix</td>
+<td>所属节点前插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>[</td>
+</tr>
+<tr>
+<td>NodeSuffix</td>
+<td>所属节点前插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>]</td>
+</tr>
+<tr>
+<td>ShowDate</td>
+<td>是否显示发布时间</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DateFormat</td>
+<td>发布时间日期格式</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>yyyy-MM-dd</td>
+</tr>
+<tr>
+<td>DateFollowTitle</td>
+<td>发布时间是否显示在标题后面</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShowHits</td>
+<td>是否显示点击数</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>HitsSuffix</td>
+<td>点击数后插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td></td>
+</tr>
+<tr>
+<td>ShowLinkTip</td>
+<td>是否显示链接提示</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：文章焦点图-cshtml"><a href="#标签名：文章焦点图-cshtml" class="headerlink" title="标签名：文章焦点图.cshtml"></a>标签名：文章焦点图.cshtml</h3><blockquote>
+<p>描述：文章焦点图</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Count</td>
+<td>输出数量</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>5</td>
+</tr>
+<tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>内容长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>DisplayDateTime</td>
+<td>显示日期格式</td>
+<td>String</td>
+<td>ComboBox</td>
+<td></td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>400</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>300</td>
+</tr>
+<tr>
+<td>PicTitle</td>
+<td>使用图片切换</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>IncludeChildNodes</td>
+<td>包含子节点内容</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Sort</td>
+<td>排序</td>
+<td>String</td>
+<td>Text</td>
+<td>Priority DESC,PublishTime DESC</td>
+</tr>
+<tr>
+<td>NodeIdentifier</td>
+<td>节点标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>TagName</td>
+<td>标记符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：树形评论内容-cshtml"><a href="#标签名：树形评论内容-cshtml" class="headerlink" title="标签名：树形评论内容.cshtml"></a>标签名：树形评论内容.cshtml</h3><blockquote>
+<p>描述：树形评论内容</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>data</td>
+<td>data</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>usedpage</td>
+<td>usedpage</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：节点列表-cshtml"><a href="#标签名：节点列表-cshtml" class="headerlink" title="标签名：节点列表.cshtml"></a>标签名：节点列表.cshtml</h3><blockquote>
+<p>描述：节点列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NodeIdentifier</td>
+<td>节点标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>Count</td>
+<td>列表条数</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>99999</td>
+</tr>
+<tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ShowPic</td>
+<td>是否显示图片</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShowLi</td>
+<td>是否包含Li</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ShowLinkTip</td>
+<td>是否显示链接提示</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Splitchar</td>
+<td>是否显示竖条间隔</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>150</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：节点名称-cshtml"><a href="#标签名：节点名称-cshtml" class="headerlink" title="标签名：节点名称.cshtml"></a>标签名：节点名称.cshtml</h3><blockquote>
+<p>描述：节点名称</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NodeIdentifier</td>
+<td>节点标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：节点名称带链接-cshtml"><a href="#标签名：节点名称带链接-cshtml" class="headerlink" title="标签名：节点名称带链接.cshtml"></a>标签名：节点名称带链接.cshtml</h3><blockquote>
+<p>描述：节点名称带链接</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NodeIdentifier</td>
+<td>节点标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：节点多级列表-cshtml"><a href="#标签名：节点多级列表-cshtml" class="headerlink" title="标签名：节点多级列表.cshtml"></a>标签名：节点多级列表.cshtml</h3><blockquote>
+<p>描述：节点多级列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NodeIdentifier</td>
+<td>节点标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>Count</td>
+<td>输出数量</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>99999</td>
+</tr>
+<tr>
+<td>Depth</td>
+<td>输出层数</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>2</td>
+</tr>
+<tr>
+<td>CurrentDepth</td>
+<td>当前层数</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：节点导航-cshtml"><a href="#标签名：节点导航-cshtml" class="headerlink" title="标签名：节点导航.cshtml"></a>标签名：节点导航.cshtml</h3><blockquote>
+<p>描述：节点导航</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NodeIdentifier</td>
+<td>标识符为空读取一级节点</td>
+<td>String</td>
+<td>Text</td>
+<td>null</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>输出数量</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>99999</td>
+</tr>
+<tr>
+<td>Depth</td>
+<td>输出层数</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>2</td>
+</tr>
+<tr>
+<td>CurrentDepth</td>
+<td>当前层数</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>1</td>
+</tr>
+<tr>
+<td>CurrentNode</td>
+<td>当前节点</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Splitchar</td>
+<td>是否显示竖条间隔</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExecuteJs</td>
+<td>是否执行js</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DelayTime</td>
+<td>特效延迟时间</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>RemoveOn</td>
+<td>鼠标移走</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>导航类型</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：节点配置信息-cshtml"><a href="#标签名：节点配置信息-cshtml" class="headerlink" title="标签名：节点配置信息.cshtml"></a>标签名：节点配置信息.cshtml</h3><blockquote>
+<p>描述：节点配置信息</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NodeIdentifier</td>
+<td>节点标识符</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>DisplayType</td>
+<td>显示类型</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>内容长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>150</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：视频分页列表-cshtml"><a href="#标签名：视频分页列表-cshtml" class="headerlink" title="标签名：视频分页列表.cshtml"></a>标签名：视频分页列表.cshtml</h3><blockquote>
+<p>描述：视频分页列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>320</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>240</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：视频列表-cshtml"><a href="#标签名：视频列表-cshtml" class="headerlink" title="标签名：视频列表.cshtml"></a>标签名：视频列表.cshtml</h3><blockquote>
+<p>描述：视频列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>320</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>240</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：视频图文列表-cshtml"><a href="#标签名：视频图文列表-cshtml" class="headerlink" title="标签名：视频图文列表.cshtml"></a>标签名：视频图文列表.cshtml</h3><blockquote>
+<p>描述：视频图文列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>内容长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>DisplayNodeName</td>
+<td>显示节点名称</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>150</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：视频标题列表-cshtml"><a href="#标签名：视频标题列表-cshtml" class="headerlink" title="标签名：视频标题列表.cshtml"></a>标签名：视频标题列表.cshtml</h3><blockquote>
+<p>描述：视频标题列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ShowNumber</td>
+<td>是否显示序号</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>NumberFormat</td>
+<td>序号的数字格式</td>
+<td>String</td>
+<td>Text</td>
+<td>00</td>
+</tr>
+<tr>
+<td>ShowNode</td>
+<td>是否显示所属节点</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>NodePrefix</td>
+<td>所属节点前插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>[</td>
+</tr>
+<tr>
+<td>NodeSuffix</td>
+<td>所属节点后插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>]</td>
+</tr>
+<tr>
+<td>ShowDate</td>
+<td>是否显示发布时间</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DateFormat</td>
+<td>发布时间日期格式</td>
+<td>String</td>
+<td>ComboBox</td>
+<td>yyyy-MM-dd</td>
+</tr>
+<tr>
+<td>ShowHits</td>
+<td>是否显示点击数</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>HitsSuffix</td>
+<td>点击数后插入字符</td>
+<td>String</td>
+<td>ComboBox</td>
+<td></td>
+</tr>
+<tr>
+<td>ShowLinkTip</td>
+<td>是否显示链接提示</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：评论内容-cshtml"><a href="#标签名：评论内容-cshtml" class="headerlink" title="标签名：评论内容.cshtml"></a>标签名：评论内容.cshtml</h3><blockquote>
+<p>描述：评论内容</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>data</td>
+<td>评论实体</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>usedpage</td>
+<td>usedpage</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShowReply</td>
+<td>是否显示回复评论</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<h3 id="标签名：评论成功提示框-cshtml"><a href="#标签名：评论成功提示框-cshtml" class="headerlink" title="标签名：评论成功提示框.cshtml"></a>标签名：评论成功提示框.cshtml</h3><blockquote>
+<p>描述：评论成功提示框</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>replyid</td>
+<td>评论Id</td>
+<td>String</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="标签名：领导图文列表-cshtml"><a href="#标签名：领导图文列表-cshtml" class="headerlink" title="标签名：领导图文列表.cshtml"></a>标签名：领导图文列表.cshtml</h3><blockquote>
+<p>描述：领导图文列表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>中文名</th>
+<th>类型</th>
+<th>控件类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TitleLength</td>
+<td>标题长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>50</td>
+</tr>
+<tr>
+<td>ContentLength</td>
+<td>内容长度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+<tr>
+<td>ShowPic</td>
+<td>是否显示图片</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImageWidth</td>
+<td>图片宽度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>150</td>
+</tr>
+<tr>
+<td>ImageHeight</td>
+<td>图片高度</td>
+<td>Int32</td>
+<td>Integer</td>
+<td>200</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/15b3.html" rel="bookmark">Visual Studio Code 常用快捷键</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/b51e.html" title="SiteAzure-Partial-v1 20171024">https://www.zenwu.site/post/b51e.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/vs-code/" rel="tag"><i class="fa fa-tag"></i> vs code</a>
+              <a href="/tags/SiteAzure/" rel="tag"><i class="fa fa-tag"></i> SiteAzure</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/15b3.html" rel="prev" title="Visual Studio Code 常用快捷键">
+                  <i class="fa fa-chevron-left"></i> Visual Studio Code 常用快捷键
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/65bf.html" rel="next" title="如何删除GIT中的.DS_Store">
+                  如何删除GIT中的.DS_Store <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="Mac下使用docker下载nginx并挂载文件。也发到另外csdn：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zenkin&#x2F;article&#x2F;details&#x2F;108612594">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下使用docker下载nginx并挂载文件">
+<meta property="og:url" content="https://www.zenwu.site/post/efd0.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="Mac下使用docker下载nginx并挂载文件。也发到另外csdn：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zenkin&#x2F;article&#x2F;details&#x2F;108612594">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/qobDTG3cA4pIy5w.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/x5NMkuQ2m7wHYTz.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/7iE1Yn9mKusprtv.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/C5nIXgbZ2SEJi6x.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/rhg7IBx5u4sjRSF.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/VKxuaOoYXLskiFn.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/YqPINMjDk2sfJiR.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/ZwG6VE7N8sXDnmt.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/GjBap9PoQRXd78W.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/7HDLkeN8ZtIhQ2v.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/zh4BY2u87y5aLm9.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/pnbtehYXAxwa9G5.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/erl2EahUFfi46ky.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/a5UQ4nFlGe7sTP3.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/bMxeBJAirWfKTG2.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/ZU24nrlMxRNW3Ee.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/PzeqMmUCpybLnfS.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/16/qn7OKHNR9MV4jSF.png">
+<meta property="article:published_time" content="2020-09-15T16:12:22.000Z">
+<meta property="article:modified_time" content="2020-10-27T00:55:43.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="nginx">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/09/16/qobDTG3cA4pIy5w.png">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/efd0.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>Mac下使用docker下载nginx并挂载文件 | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/efd0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mac下使用docker下载nginx并挂载文件
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-09-16 00:12:22" itemprop="dateCreated datePublished" datetime="2020-09-16T00:12:22+08:00">2020-09-16</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-10-27 08:55:43" itemprop="dateModified" datetime="2020-10-27T08:55:43+08:00">2020-10-27</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Mac下使用docker下载nginx并挂载文件。<br>也发到另外csdn：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zenkin/article/details/108612594">https://blog.csdn.net/zenkin/article/details/108612594</a></p>
+<a id="more"></a>
+
+<h2 id="一、docker-for-macr客户端"><a href="#一、docker-for-macr客户端" class="headerlink" title="一、docker for macr客户端"></a>一、docker for macr客户端</h2><ul>
+<li>对于10.10.3以上的用户 推荐使用 Docker for Mac <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/">http://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/</a></li>
+<li>同时，使用阿里云的镜像加速器，<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors</a>  </li>
+<li>阿里云的上面的地址里里有教程，就不转载了。</li>
+</ul>
+<p><img src="https://i.loli.net/2020/09/16/qobDTG3cA4pIy5w.png" alt="Docker for Mac"></p>
+<blockquote>
+<p>若使用阿里云的docker镜像仓库也很不错，个人免费限制有点大，有空研究下；</p>
+</blockquote>
+<h2 id="二、安装nginx-静态文件-挂载"><a href="#二、安装nginx-静态文件-挂载" class="headerlink" title="二、安装nginx+静态文件+挂载"></a>二、安装nginx+静态文件+挂载</h2><h3 id="1、拉取nginx镜像"><a href="#1、拉取nginx镜像" class="headerlink" title="1、拉取nginx镜像"></a>1、拉取nginx镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx:latest <span class="comment">###最新版本</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/09/16/x5NMkuQ2m7wHYTz.png" alt="拉取nginx镜像"></p>
+<h3 id="2、查看镜像"><a href="#2、查看镜像" class="headerlink" title="2、查看镜像"></a>2、查看镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images  <span class="comment">### 查看搜有镜像</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/09/16/7iE1Yn9mKusprtv.png" alt="查看镜像"></p>
+<h3 id="3、运行镜像"><a href="#3、运行镜像" class="headerlink" title="3、运行镜像"></a>3、运行镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 4000:80 --name zen-nginx  nginx  <span class="comment">### 用4000端口映射80，用zen-nginx作为容器名，对应仓库nginx</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/09/16/C5nIXgbZ2SEJi6x.png" alt="运行镜像"></p>
+<h3 id="4、查看容器"><a href="#4、查看容器" class="headerlink" title="4、查看容器"></a>4、查看容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a <span class="comment">### 所有容器，包括未运行</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/09/16/rhg7IBx5u4sjRSF.png" alt="查看容器"></p>
+<p>若安装docker mac，可以见：</p>
+<p><img src="https://i.loli.net/2020/09/16/VKxuaOoYXLskiFn.png" alt="docker mac 查看容器"></p>
+<h3 id="5、访问"><a href="#5、访问" class="headerlink" title="5、访问"></a>5、访问</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl 127.0.0.1:4000 <span class="comment">## curl</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/09/16/YqPINMjDk2sfJiR.png" alt="curl访问"></p>
+<p>到浏览器访问：<code>http://127.0.0.1:4000</code></p>
+<p><img src="https://i.loli.net/2020/09/16/ZwG6VE7N8sXDnmt.png" alt="浏览器访问"></p>
+<h3 id="6、以终端的方式进入nginx容器"><a href="#6、以终端的方式进入nginx容器" class="headerlink" title="6、以终端的方式进入nginx容器"></a>6、以终端的方式进入nginx容器</h3><p>如有docker for mac 则按钮进入，自动新建终端</p>
+<p><img src="https://i.loli.net/2020/09/16/GjBap9PoQRXd78W.png" alt="以终端的方式进入nginx容器"></p>
+<p>或 以终端方式进入nginx容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it zen-nginx bash</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/09/16/7HDLkeN8ZtIhQ2v.png" alt="以终端方式进入nginx容器"></p>
+<p>① 容器名； ②容器ID</p>
+<h3 id="7、查看有关文件夹-etc-nginx"><a href="#7、查看有关文件夹-etc-nginx" class="headerlink" title="7、查看有关文件夹 etc/nginx"></a>7、查看有关文件夹 <code>etc/nginx</code></h3><blockquote>
+<p><code>ls</code>命令，查看文件文件夹列表、<br><code>cd</code>命令</p>
+</blockquote>
+<p><code>cd</code>进入目录，进入<code>cd etc</code>目录 或直接进入 <code>cd /etc/nginx</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> / <span class="comment">###进入根目录</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment">### 返回上一级目录</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/09/16/zh4BY2u87y5aLm9.png" alt="进入目录"></p>
+<h3 id="8、查看文件cat-nginx-conf-等文件"><a href="#8、查看文件cat-nginx-conf-等文件" class="headerlink" title="8、查看文件cat nginx.conf 等文件"></a>8、查看文件cat nginx.conf 等文件</h3><blockquote>
+<p>查看文件命令 <code>cat</code></p>
+</blockquote>
+<p>查看文件 <code>cat nginx.conf</code> ，为nginx配置文件</p>
+<p><img src="https://i.loli.net/2020/09/16/pnbtehYXAxwa9G5.png" alt="nginx配置文件"></p>
+<p>查看包含了其他文件，继续查看 <code>cat /etc/nginx/conf.d/*.conf</code></p>
+<p><img src="https://i.loli.net/2020/09/16/erl2EahUFfi46ky.png" alt="继续查看/etc/nginx/conf.d/*.conf"></p>
+<p>看什么？<br>看有日志文件、资源文件的配置项。即：<br><code>root /usr/share/nginx/html</code>，资源文件夹，没有会出现访问nginx服务器会出现403错误，<code>/usr/share/nginx/html</code><br><code>error_log /var/log/nginx/error.log warn</code>，日志文件夹 <code>/var/log/nginx</code></p>
+<h3 id="9、退出容器"><a href="#9、退出容器" class="headerlink" title="9、退出容器"></a>9、退出容器</h3><p><code>exit ### 退出容器命令</code> 退出容器，或者使用 <code>docker for mac</code> 切换。</p>
+<p><img src="https://i.loli.net/2020/09/16/a5UQ4nFlGe7sTP3.png" alt="退出容器"></p>
+<p>回到了系统终端。</p>
+<h3 id="10、创建本地挂载文件"><a href="#10、创建本地挂载文件" class="headerlink" title="10、创建本地挂载文件"></a>10、创建本地挂载文件</h3><p><img src="https://i.loli.net/2020/09/16/bMxeBJAirWfKTG2.png" alt="创建本地挂载文件"></p>
+<h3 id="11、复制文件到本地"><a href="#11、复制文件到本地" class="headerlink" title="11、复制文件到本地"></a>11、复制文件到本地</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp zen-nginx:/etc/nginx /Users/zenkin/Documents/00-个人档/11-docker/demo-nginx/config/    <span class="comment">### nginx配置文件</span></span><br></pre></td></tr></table></figure>
+
+<p>使用的是命令 <code>docker cp</code>，从容器复制到本地，如此类推：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker cp zen-nginx:/var/<span class="built_in">log</span>/nginx /Users/zenkin/Documents/00-个人档/11-docker/demo-nginx/logs/   <span class="comment">###日志文件，注意路径</span></span><br><span class="line">docker cp zen-nginx:/usr/share/nginx/html /Users/zenkin/Documents/00-个人档/11-docker/demo-nginx/data/   <span class="comment">### 资源内容文件，注意路径</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/09/16/ZU24nrlMxRNW3Ee.png" alt="容器复制到本地"></p>
+<blockquote>
+<p>有几次错误，复制回来的问题，与容器里的不对应，就删掉文件夹再来了，第二次成功。</p>
+</blockquote>
+<h3 id="12、关闭容器"><a href="#12、关闭容器" class="headerlink" title="12、关闭容器"></a>12、关闭容器</h3><p>关闭容器，准备重启 <code>docker rm -f zen-nginx</code></p>
+<h3 id="13、重启并挂载文件"><a href="#13、重启并挂载文件" class="headerlink" title="13、重启并挂载文件"></a>13、重启并挂载文件</h3><p>最关键一步，挂件文件，启动容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name zen-nginx -p 4000:80 -v /Users/zenkin/Documents/00-个人档/11-docker/demo-nginx/config/nginx/:/etc/nginx -v /Users/zenkin/Documents/00-个人档/11-docker/demo-nginx/data/html:/usr/share/nginx/html -v /Users/zenkin/Documents/00-个人档/11-docker/demo-nginx/logs:/var/<span class="built_in">log</span>/nginx -d nginx</span><br></pre></td></tr></table></figure>
+
+<h3 id="14、修改默认配置文件"><a href="#14、修改默认配置文件" class="headerlink" title="14、修改默认配置文件"></a>14、修改默认配置文件</h3><p>修改默认nginx配置文件，配置网站本地域名，注意改host，修改网站文件等等；</p>
+<p><img src="https://i.loli.net/2020/09/16/PzeqMmUCpybLnfS.png" alt="成功"></p>
+<p>到此时已成功了。</p>
+<h3 id="15、docker-for-mac"><a href="#15、docker-for-mac" class="headerlink" title="15、docker for mac"></a>15、docker for mac</h3><p>在软件上看到挂载mounts</p>
+<p><img src="https://i.loli.net/2020/09/16/qn7OKHNR9MV4jSF.png" alt="mounts"></p>
+<blockquote>
+<p>参考不分先后：</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://tengine.taobao.org/book/index.html">Nginx开发从入门到精通 — Nginx开发从入门到精通</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.nginx.cn/76.html">nginx基本配置与参数说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.51cto.com/dengxi/1747883">Nginx 详解 （二）-天真小同志-51CTO博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/saysmy/p/6609796.html">windows下nginx的安装及使用方法入门 - 冒雨ing - 博客园</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/u011192409/article/details/51084831">Windows下安装以及配置nginx - CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/macos-docker-install.html">MacOS Docker 安装 | 菜鸟教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43162745/article/details/83241492">Docker Getting Started_weixin_43162745的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wmyskxz/p/10943169.html">了解【Docker】从这里开始 - 我没有三颗心脏 - 博客园</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009544565#articleHeader6">(1) Docker入门，看这篇就够了 - 个人文章 - SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ityouknow/p/8520296.html">Docker(一)：Docker入门教程 - 纯洁的微笑 - 博客园</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0c86a7580f3a">在 Mac 平台下搭建docker - nginx - 简书</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30455365/article/details/95964381">mac环境下使用docker安装nginx_weixin_30455365的博客-CSDN博客</a></li>
+<li>主要参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45493633/article/details/103101182?utm_medium=distribute.pc_relevant.none-task-blog-title-1&spm=1001.2101.3001.4242">Mac 下使用docker下载nginx并挂载文件，解决端口问题_weixin_45493633的博客-CSDN博客】</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ddhsea/article/details/92203713?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">docker 安装nginx 并部署_ddhsea的博客-CSDN博客</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/47c0.html" rel="bookmark">Linux下如何查看版本信息</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/dc89.html" rel="bookmark">nginx配置ssl（配置文件）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/446f.html" rel="bookmark">Redirecting to /bin/systemctl restart sshd.service</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/efd0.html" title="Mac下使用docker下载nginx并挂载文件">https://www.zenwu.site/post/efd0.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/nginx/" rel="tag"><i class="fa fa-tag"></i> nginx</a>
+              <a href="/tags/docker/" rel="tag"><i class="fa fa-tag"></i> docker</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/7d0f.html" rel="prev" title="笔记-案例题-2016年下-整体管理">
+                  <i class="fa fa-chevron-left"></i> 笔记-案例题-2016年下-整体管理
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/2418.html" rel="next" title="笔记-项目风险管理-风险管理计划">
+                  笔记-项目风险管理-风险管理计划 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

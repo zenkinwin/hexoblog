@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="1. 生命周期阶的五阶段划分为了有效地进行系统的开发和管理，根据系统生命周期的概念，一般可以将信息系统的开发分成5个阶段，即总体规划阶段、系统分析阶段、系统设计阶段、系统实施阶段、系统运行和评价阶段。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-信息系统开发基础-信息系统生命周期">
+<meta property="og:url" content="https://www.zenwu.site/post/c8ab.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="1. 生命周期阶的五阶段划分为了有效地进行系统的开发和管理，根据系统生命周期的概念，一般可以将信息系统的开发分成5个阶段，即总体规划阶段、系统分析阶段、系统设计阶段、系统实施阶段、系统运行和评价阶段。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-26T14:49:51.000Z">
+<meta property="article:modified_time" content="2020-11-28T13:12:03.358Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="信息系统开发基础">
+<meta property="article:tag" content="生命周期">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/c8ab.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>笔记-信息系统开发基础-信息系统生命周期 | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/c8ab.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔记-信息系统开发基础-信息系统生命周期
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-26 22:49:51" itemprop="dateCreated datePublished" datetime="2020-04-26T22:49:51+08:00">2020-04-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-28 21:12:03" itemprop="dateModified" datetime="2020-11-28T21:12:03+08:00">2020-11-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">信息系统开发基础</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="1-生命周期阶的五阶段划分"><a href="#1-生命周期阶的五阶段划分" class="headerlink" title="1. 生命周期阶的五阶段划分"></a>1. 生命周期阶的五阶段划分</h2><p>为了有效地进行系统的开发和管理，根据系统生命周期的概念，一般可以将信息系统的开发分成5个阶段，即<strong>总体规划阶段、系统分析阶段、系统设计阶段、系统实施阶段、系统运行和评价阶段</strong>。</p>
+<a id="more"></a>
+<h3 id="1-1-总体规划阶段"><a href="#1-1-总体规划阶段" class="headerlink" title="1.1. 总体规划阶段"></a>1.1. 总体规划阶段</h3><p>一个比较完整的总体规划应当包括信息系统开发目标、总体结构、管理流程、实施计划、技术规范。系统规划阶段的任务：</p>
+<ol>
+<li>对组织的环境、目标及现行系统的状况进行初步调查，根据组织目标和发展战略，确定信息系统的发展战略；</li>
+<li>对建设新系统的需求做出分析和预测;</li>
+<li>同时考虑建设新系统所受的各种约束；</li>
+<li>研究建设新系统的必要性和可能性；</li>
+<li>根据需要与可能，给出拟建系统的备选方案；</li>
+<li>对这些方案进行可行性研究，写出可行性研究报告。</li>
+</ol>
+<p>可行性研究报告审议通过后，将新系统建设方案及实施计划编写成系统设计任务书。</p>
+<blockquote>
+<p>系统规划阶段是现状分析、了解需求形成可行性研究报告和系统设计任务书。<br>可行性研究报告、系统设计任务书（系统建设方案、实施计划）</p>
+</blockquote>
+<h3 id="1-2-系统分析阶段"><a href="#1-2-系统分析阶段" class="headerlink" title="1.2. 系统分析阶段"></a>1.2. 系统分析阶段</h3><p>目标是为系统设计阶段提供系统的逻辑模型，内容包括组织结构及功能分析、业务流程分析、数据和数据流程分析及系统初步方案。</p>
+<p>数据流图（Data Flow Diagram）：简称DFD，它从数据传递和加工角度，以图形方式来表达系统的逻辑功能、数据在系统内部的逻辑流向和逻辑变换过程，是结构化系统分析方法的主要表达工具及用于表示软件模型的一种图示方法。</p>
+<blockquote>
+<p>系统分析阶段主要是根据系统设计任务书确定系统的目标逻辑模型形成系统说明书。<br>建立新系统逻辑模型（做什么）<br>系统需求规格书、确认/新系统测试计划</p>
+</blockquote>
+<h3 id="1-3-系统设计阶段"><a href="#1-3-系统设计阶段" class="headerlink" title="1.3. 系统设计阶段"></a>1.3. 系统设计阶段</h3><p>系统设计的主要目的就是为下一阶段的系统实施制定蓝图。系统设计包括两个方面的内容：</p>
+<p>首先是系统<strong>总体设计</strong>，总体设计的任务是提供信息系统的概括的解决方案，主要内容包括信息系统的功能模块的划分，功能模块之间的层次结构和关系。</p>
+<p>其次是系统<strong>详细设计</strong>，详细设计的任务是把系统总体设计的结果具体化。这个阶段的任务不是编写程序，而是设计出各个功能模块的详细规格说明，如信息系统各个模块的处理流程，系统的数据流程和数据库逻辑结构的设计。工具如使用ER图。</p>
+<p>根据系统分析的结果设计出信息系统的实施方案，主要内容包括系统架构设计、数据库设计、处理流程设计、功能模块设计、安全控制方案设计、系统组织和队伍设计及系统管理流程设计。</p>
+<blockquote>
+<p>系统设计阶段根据系统说明书进行技术方案设计形成总体设计和详细设计报告。<br>建立新系统物理模型（怎么做）<br>系统设计说明书等</p>
+</blockquote>
+<h3 id="1-4-系统实施阶段"><a href="#1-4-系统实施阶段" class="headerlink" title="1.4. 系统实施阶段"></a>1.4. 系统实施阶段</h3><p>是将设计阶段的成果在计算机和网络上具体实现，即将设计文本变成能在计算机上运行的软件系统。由于系统实施阶段是对以前全部工作的检验，因此用户的参与特别重要。</p>
+<blockquote>
+<p>系统实施阶段主要开展设备购置、安装调试、编码测试等工作。<br>源码、测试报告</p>
+</blockquote>
+<h3 id="1-5-系统运行和评价（维护）阶段"><a href="#1-5-系统运行和评价（维护）阶段" class="headerlink" title="1.5. 系统运行和评价（维护）阶段"></a>1.5. 系统运行和评价（维护）阶段</h3><p>通过试运行，系统性能的优劣及其他各种问题都会暴露在用户面前，即进入了系统验收阶段。</p>
+<blockquote>
+<p>系统运行和维护阶段主要是上线后的系统维护和评价工作。<br>维护与评价日志</p>
+</blockquote>
+<pre><code>软件生命周期中时间最长的阶段是（B）阶段。
+A．需求分析
+B．软件维护
+C．软件设计
+D．软件开发</code></pre>
+<p>每个阶段都有其明确的任务，任务完成后都将交付给下一阶段一定规格的文档，作为下一阶段开发的依据。这种开发过程在直观上就像一级一级的瀑布，所以系统开发生命周期也称为“瀑布模型”。</p>
+<p>有调查数据显示，系统生命周期中各个阶段的工作量大致为：总体规划阶段占9%，系统分析阶段占15%，系统设计阶段占20%，系统实施阶段占50%，系统运行和评价阶段占6%。可以看出，系统实施阶段的工作约占总工作量的一半，是各个阶段中工作量最大的。</p>
+<h2 id="2-生命周期阶的四阶段划分"><a href="#2-生命周期阶的四阶段划分" class="headerlink" title="2. 生命周期阶的四阶段划分"></a>2. 生命周期阶的四阶段划分</h2><p>参考教程《信息系统项目管理师教程（第3版）》p10，为了便于论述针对信息系统的项目管理，信息系统的生命周期还可以简化：</p>
+<ul>
+<li>立项（系统规划）</li>
+<li>开发（系统分析、系统设计、系统实施、系统验收等工作）</li>
+<li>运维阶段</li>
+<li>消亡阶段</li>
+</ul>
+<h3 id="2-1-信息系统的规划阶段（立项阶段）"><a href="#2-1-信息系统的规划阶段（立项阶段）" class="headerlink" title="2.1. 信息系统的规划阶段（立项阶段）"></a>2.1. 信息系统的规划阶段（立项阶段）</h3><p>本阶段的目标是制定出信息系统的长期发展方案、决定信息系统在整个生命周期内的发展方向、规模和发展进程。</p>
+<h3 id="2-2-信息系统的开发阶段（开发阶段）"><a href="#2-2-信息系统的开发阶段（开发阶段）" class="headerlink" title="2.2. 信息系统的开发阶段（开发阶段）"></a>2.2. 信息系统的开发阶段（开发阶段）</h3><p>信息系统的开发阶段是信息系统生命周期中最重要和最关键的阶段。<strong>该阶段又可分为总体规划、系统分析、系统设计、系统实施和系统验收5个阶段。</strong></p>
+<h4 id="2-2-1-总体规划阶段"><a href="#2-2-1-总体规划阶段" class="headerlink" title="2.2.1. 总体规划阶段"></a>2.2.1. 总体规划阶段</h4><p><strong>信息系统总体规划是系统开发的起始阶段，它的基础是需求分析</strong>。本阶段将：</p>
+<ul>
+<li>明确信息系统在企业经营战略中的作用和地位；</li>
+<li>指导信息系统的开发；</li>
+<li>优化配置和利用各种资源，包括内部资源和外部资源；</li>
+<li>通过规划过程规范企业的业务流程。</li>
+</ul>
+<p>一个比较完整的总体规划，应当包括信息系统的开发目标、信息系统的总体架构、信息系统的组织结构和管理流程、信息系统的实施计划、信息系统的技术规范等。</p>
+<h4 id="2-2-2-系统分析阶段"><a href="#2-2-2-系统分析阶段" class="headerlink" title="2.2.2. 系统分析阶段"></a>2.2.2. 系统分析阶段</h4><p>目标是为系统设计阶段提供系统的<strong>逻辑模型</strong>，内容包括组织结构及功能分析、业务流程分析、数据和数据流程分析、系统初步方案等。</p>
+<p>数据流图（Data Flow Diagram）：简称DFD，它从数据传递和加工角度，以图形方式来表达系统的逻辑功能、数据在系统内部的逻辑流向和逻辑变换过程，是结构化系统分析方法的主要表达工具及用于表示软件模型的一种图示方法。<br>数据流图以图形的方式描绘数据在系统中流动和处理的过程，由于它只反映系统必须完成的逻辑功能，所以它是一种功能模型。</p>
+<h4 id="2-2-3-系统设计阶段"><a href="#2-2-3-系统设计阶段" class="headerlink" title="2.2.3. 系统设计阶段"></a>2.2.3. 系统设计阶段</h4><p>根据系统分析的结果设计出信息系统的实施方案，内容包括系统架构设计、数据库设计、处理流程设计、功能模块设计、安全控制方案设计、系统组织和队伍设计、系统管理流程设计等。</p>
+<h4 id="2-2-4-系统实施阶段"><a href="#2-2-4-系统实施阶段" class="headerlink" title="2.2.4. 系统实施阶段"></a>2.2.4. 系统实施阶段</h4><p>将设计阶段的结果在计算机和网络上具体实现，也就是将设计文本变成能在计算机上运行的软件系统由于系统实施阶段是对以前的全部工作的检验，因此，系统实施阶段用户的参与特别重要。</p>
+<h4 id="2-2-5-系统验收阶段"><a href="#2-2-5-系统验收阶段" class="headerlink" title="2.2.5. 系统验收阶段"></a>2.2.5. 系统验收阶段</h4><p>通过试运行，系统性能的优劣、是否做到了用户友好等问题都会暴露在用户面前，这时就进入了系统验收阶段。</p>
+<h3 id="2-3-信息系统运行维护阶段-运维阶段"><a href="#2-3-信息系统运行维护阶段-运维阶段" class="headerlink" title="2.3. 信息系统运行维护阶段(运维阶段)"></a>2.3. 信息系统运行维护阶段(运维阶段)</h3><p>当信息系统通过验收，正式移交给用户以后，系统就进入了运行阶段。长时间的运行是检验系统质量的试金石。</p>
+<h3 id="2-4-信息系统更新阶段（消亡阶段）"><a href="#2-4-信息系统更新阶段（消亡阶段）" class="headerlink" title="2.4. 信息系统更新阶段（消亡阶段）"></a>2.4. 信息系统更新阶段（消亡阶段）</h3><p>开发好一个信息系统，并想着让它一劳永逸地运行下去，是不现实的。企业的信息系统经常会不可避免地遇到系统更新改造、功能扩展，甚至是报废重建的情况。对此，企业在信息系统建设的初期就要注意系统的消亡条件和时机，以及由此而花费的成本。</p>
+<p>转载/整理：<br>希赛教育的试题：<a target="_blank" rel="noopener" href="https://www.educity.cn/">https://www.educity.cn/</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/1b4a.html" rel="bookmark">笔记整理-信息系统开发基础-uml</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/39dc.html" rel="bookmark">笔记-信息系统开发基础-uml-uml类图关系</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/ce72.html" rel="bookmark">笔记-信息系统开发基础-信息系统开发模型</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/7b8c.html" rel="bookmark">笔记-信息系统开发基础-信息系统规划方法-信息系统规划流程</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/8dc2.html" rel="bookmark">笔记-信息系统开发基础-信息系统开发方法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/7d7d.html" rel="bookmark">笔记-信息系统开发基础-架构设计-软件体系结构评估方式</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/606f.html" rel="bookmark">笔记-信息系统开发基础-架构设计-软件架构主要职责</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/6432.html" rel="bookmark">笔记-信息系统开发基础-架构设计-软件架构风格</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/ec37.html" rel="bookmark">笔记-信息系统开发基础-架构设计-软件系统架构视图</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/c8ab.html" title="笔记-信息系统开发基础-信息系统生命周期">https://www.zenwu.site/post/c8ab.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> 信息系统开发基础</a>
+              <a href="/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" rel="tag"><i class="fa fa-tag"></i> 生命周期</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/7b8c.html" rel="prev" title="笔记-信息系统开发基础-信息系统规划方法-大型新信息系统特征/企业系统规划步骤">
+                  <i class="fa fa-chevron-left"></i> 笔记-信息系统开发基础-信息系统规划方法-大型新信息系统特征/企业系统规划步骤
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/696c.html" rel="next" title="笔记-信息化与系统集成技术-信息资源管理">
+                  笔记-信息化与系统集成技术-信息资源管理 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

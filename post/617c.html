@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="2017上半年高级信息系统项目管理师下午案例分析真题  【说明】某系统集成公司A中标某信息中心IT运维平台开发项目，公司A任命小李为项目经理。小李在项目启动阶段确定了项目团队和项目组织架构，项目团队分为三个小组：研发组、测试组和产品组。各组成员分别来自研发部、测试部以及产品管理部。 小李制定了项目整体进度计划，将项目分为需求分析、设计、编码、试运行和验收五个阶段。为保证项目质量，小李请有着多年的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-案例题-2017年上-质量管理">
+<meta property="og:url" content="https://www.zenwu.site/post/617c.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="2017上半年高级信息系统项目管理师下午案例分析真题  【说明】某系统集成公司A中标某信息中心IT运维平台开发项目，公司A任命小李为项目经理。小李在项目启动阶段确定了项目团队和项目组织架构，项目团队分为三个小组：研发组、测试组和产品组。各组成员分别来自研发部、测试部以及产品管理部。 小李制定了项目整体进度计划，将项目分为需求分析、设计、编码、试运行和验收五个阶段。为保证项目质量，小李请有着多年的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-26T12:33:39.000Z">
+<meta property="article:modified_time" content="2020-11-05T14:34:57.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="质量管理">
+<meta property="article:tag" content="案例题">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/617c.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>笔记-案例题-2017年上-质量管理 | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/617c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔记-案例题-2017年上-质量管理
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-10-26 20:33:39" itemprop="dateCreated datePublished" datetime="2020-10-26T20:33:39+08:00">2020-10-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-05 22:34:57" itemprop="dateModified" datetime="2020-11-05T22:34:57+08:00">2020-11-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">案例分析</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/%E6%A1%88%E4%BE%8B%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">案例题</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>2017上半年高级信息系统项目管理师下午案例分析真题</p>
+</blockquote>
+<p><strong>【说明】</strong><br>某系统集成公司A中标某信息中心IT运维平台开发项目，公司A任命小李为项目经理。小李在项目启动阶段确定了项目团队和项目组织架构，项目团队分为三个小组：研发组、测试组和产品组。各组成员分别来自研发部、测试部以及产品管理部。</p>
+<p>小李制定了项目整体进度计划，将项目分为需求分析、设计、编码、试运行和验收五个阶段。为保证项目质量，小李请有着多年的编码、测试工作经历的测试组组长张工<strong>兼任</strong>项目的<strong>质量保证人员</strong>。</p>
+<p>在项目启动会上，小李对张工进行了<strong>口头授权</strong>，并要求张工在项目的重要阶段（如完成需求分析、完成总体设计、完成单元编码和测试等）必须对项目交付物进行<strong>质量检查</strong>。在检查时，张工可以根据自己的经验<strong>提出要求</strong>，对于不满足要求的工作，必须<strong>立即进行返工</strong>。</p>
+<p>项目在实施过程中，遇到一些问题，具体如下：在项目组完成编码与单元测试工作，准备进行系统集成前，张工按照项目经理小李的要求进行了质量检查。在检查过程中，张工凭借多年开发经验，认为某位开发人员负责的一个模块代码存在响应时间长的问题，并对其开具了不符合项报告。但这位开发人员认为自己是严格按照公司编码规范编写的，响应时间长不是自己的问题。经过争吵，张工<strong>未能说服</strong>该开发人员，同时考虑到该模块对整体项目影响不大，张工没有再追究此事，该代码也没有修改。</p>
+<p>在项目上线前，信息中心领导组织技术专家到项目现场进行调研和考察。专家组对已完成的编码进行了审查，发现很多模块不能满足甲方的<strong>质量要求</strong>。</p>
+<p><strong>【问题1】（10分）</strong><br>请指出该项目在质量管理方面可能存在哪些问题？<br><strong>【问题2】（8分）</strong><br>请指出张工在质量检查中可能存在的问题。<br><strong>【问题3】（6分）</strong><br>针对上述问题，如果你是项目经理，你会采取哪些措施？<br><strong>【问题4】（5分）</strong><br>在（1）~（5）中填写恰当内容（从候选答案中选择一个正确选项，将该选项编号填入答题纸对应栏内）。<br>在质量控制中，可以使用的工具和技术有（1）、（2）、（3）、（4）、（5）。<br>候选答案：<br>A、趋势分析 B、试验设计 C、因果图 D、统计抽样<br>E、帕累托图 F、质量成本 G、成本/效益分析 H、控制图</p>
+<a id="more"></a>
+
+<hr>
+<h4 id="【问题1】"><a href="#【问题1】" class="headerlink" title="【问题1】"></a>【问题1】</h4><ol>
+<li>没有制定切实可行的质量管理计划；</li>
+<li>没有质量保证体系、缺乏质量标准和规范；</li>
+<li>质量管理职责分配不合理，没有专门的质量保证人员，没有独立于项目；</li>
+<li>没有实施质量保证活动，或者质量保证活动实施不到位</li>
+<li>质量控制缺少必要的评审</li>
+<li>质量控制存在问题，没有达到预期的效果</li>
+<li>团队成员质量意识不高</li>
+<li>团队缺乏沟通</li>
+</ol>
+<h4 id="【问题2】"><a href="#【问题2】" class="headerlink" title="【问题2】"></a>【问题2】</h4><ol>
+<li>没有制定质量检查计划；</li>
+<li>没有制定质量检查标准；</li>
+<li>没有按照质量标准进行检查，而是依照经验来检查工作；</li>
+<li>发现的质量问题<strong>没有督促及时解决</strong>，导致后面质量不达标；</li>
+<li>需求分析完成后<strong>没有做质量评审</strong>；</li>
+<li><strong>质量检查不彻底</strong>，有大量质量问题未被检查出来。</li>
+</ol>
+<h4 id="【问题3】"><a href="#【问题3】" class="headerlink" title="【问题3】"></a>【问题3】</h4><ol>
+<li><strong>制定</strong>科学的质量管理计划；</li>
+<li>建立质量<strong>保证体系</strong>；</li>
+<li>明确项目<strong>质量目标</strong>，明确<strong>质量标准与规范</strong>；</li>
+<li>配备具有相应质量测量经验的人员，或者给相应的质量测量人员<strong>培训</strong>，提高其技能；</li>
+<li><strong>重视质量保证工作</strong>，采取相应的工具与技术，确保质量保证得以良好实施；</li>
+<li>加强<strong>质量控制与质量评审</strong>工作；</li>
+<li>重视<strong>质量测试</strong>，合理安排充分测试。</li>
+</ol>
+<h4 id="【问题4】"><a href="#【问题4】" class="headerlink" title="【问题4】"></a>【问题4】</h4><p>在<strong>质量控制</strong>中，可以使用的工具和技术有（1）、（2）、（3）、（4）、（5）。<br>候选答案：<br><strong>A、趋势分析</strong> B、试验设计 <strong>C、因果图 D、统计抽样</strong><br><strong>E、帕累托图</strong> F、质量成本 G、成本/效益分析 <strong>H、控制图</strong></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/f4ab.html" rel="bookmark">笔记-案例题-2015年上-进度管理-质量管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/9f28.html" rel="bookmark">笔记-案例题-2018年上-质量管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/82e1.html" rel="bookmark">笔记-案例题-2019年下-质量管理-帕累托分析</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/69bb.html" rel="bookmark">笔记-信息系统开发基础-软件工程-评审与审计</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/a5f.html" rel="bookmark">笔记-项目质量管理-6σ管理法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/b8eb.html" rel="bookmark">笔记-项目质量管理-复习要点</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/3743.html" rel="bookmark">笔记-项目质量管理-精简</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/b974.html" rel="bookmark">笔记-项目质量管理-质量保证和质量控制</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/2e7f.html" rel="bookmark">笔记-项目质量管理-质量保证和质量控制（信管网）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/3dad.html" rel="bookmark">笔记-项目质量管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/d0db.html" rel="bookmark">笔记-论文-质量管理+进度管理（背诵）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/4f1.html" rel="bookmark">笔记-常见考点-常见问题原因分析</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/72e7.html" rel="bookmark">笔记-案例题-2009年上-需求管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/f884.html" rel="bookmark">笔记-案例题-2015年上-整体管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/3984.html" rel="bookmark">笔记-案例题-2015年下-整体管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/37a4.html" rel="bookmark">笔记-案例题-2016年上-整体管理+风险管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/afe7.html" rel="bookmark">笔记-案例题-2015年下-需求管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/2193.html" rel="bookmark">笔记-案例题-2016年上-范围管理+沟通管理+进度管理+风险管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/7d0f.html" rel="bookmark">笔记-案例题-2016年下-整体管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/67b0.html" rel="bookmark">笔记-案例题-2016年下-项目收尾</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/83c4.html" rel="bookmark">笔记-案例题-2017年上-变更管理-需求管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/ac0.html" rel="bookmark">笔记-案例题-2017年下-整体管理-变更管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/f87c.html" rel="bookmark">笔记-案例题-2017年下-管理团队-冲突管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/e765.html" rel="bookmark">笔记-案例题-2018年上-人力资源管理-建设项目团队</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/6e6d.html" rel="bookmark">笔记-案例题-2018年下-范围管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/3b18.html" rel="bookmark">笔记-案例题-2018年下-项目管理-项目集管理-项目组合管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/507d.html" rel="bookmark">笔记-案例题-2019年上-人力资源管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/32f.html" rel="bookmark">笔记-案例题-2019年上-采购管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/be8f.html" rel="bookmark">笔记-案例题-2019年下-人力资源管理-管理者权力-马斯洛需求理论-冲突管理</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/617c.html" title="笔记-案例题-2017年上-质量管理">https://www.zenwu.site/post/617c.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 质量管理</a>
+              <a href="/tags/%E6%A1%88%E4%BE%8B%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 案例题</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/d3b5.html" rel="prev" title="2020年10月份学习总结，项目管理案例">
+                  <i class="fa fa-chevron-left"></i> 2020年10月份学习总结，项目管理案例
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/83c4.html" rel="next" title="笔记-案例题-2017年上-变更管理-需求管理">
+                  笔记-案例题-2017年上-变更管理-需求管理 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

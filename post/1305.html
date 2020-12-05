@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="1. 活动定义为得到工作分解结构中最底层的**交付物执行的一系列活动，对这些活动的识别以及归档的过程叫做活动定义**。 工具：分解、模板、滚动式规划、专家判断、规划组成部分 输入：工作分解结构、项目范围说明书、组织过程资产、项目管理计划 输出：（1）项目活动清单是项目活动的主要输出，它列出了一个项目所需开展和完成的全部项目活动。（2）项目活动清单是根据ＷＢＳ通过进一步细化得到。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-项目进度管理-精简">
+<meta property="og:url" content="https://www.zenwu.site/post/1305.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="1. 活动定义为得到工作分解结构中最底层的**交付物执行的一系列活动，对这些活动的识别以及归档的过程叫做活动定义**。 工具：分解、模板、滚动式规划、专家判断、规划组成部分 输入：工作分解结构、项目范围说明书、组织过程资产、项目管理计划 输出：（1）项目活动清单是项目活动的主要输出，它列出了一个项目所需开展和完成的全部项目活动。（2）项目活动清单是根据ＷＢＳ通过进一步细化得到。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-08T14:59:12.000Z">
+<meta property="article:modified_time" content="2020-11-06T02:53:43.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="进度管理">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/1305.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>笔记-项目进度管理-精简 | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/1305.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔记-项目进度管理-精简
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-10-08 22:59:12" itemprop="dateCreated datePublished" datetime="2020-10-08T22:59:12+08:00">2020-10-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-06 10:53:43" itemprop="dateModified" datetime="2020-11-06T10:53:43+08:00">2020-11-06</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%BA%A6%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">项目进度管理</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="1-活动定义"><a href="#1-活动定义" class="headerlink" title="1. 活动定义"></a>1. 活动定义</h4><p>为得到<strong>工作分解结构中最底层的**</strong>交付物<strong>执行的一系列活动，对这些活动的</strong>识别<strong>以及</strong>归档<strong>的过程叫做</strong>活动定义**。</p>
+<p>工具：<strong>分解</strong>、模板、滚动式规划、专家判断、规划组成部分</p>
+<p>输入：工作分解结构、项目范围说明书、组织过程资产、项目管理计划</p>
+<p>输出：<br>（1）<strong>项目活动清单</strong>是项目活动的主要输出，它列出了一个项目所需开展和完成的全部项目活动。<br>（2）项目活动清单是根据ＷＢＳ通过进一步细化得到。</p>
+<a id="more"></a>
+
+<h4 id="2-活动排序"><a href="#2-活动排序" class="headerlink" title="2. 活动排序"></a>2. 活动排序</h4><p>确定活动之间的<strong>依赖关系</strong>，形成文档</p>
+<p>工具：<br>（1）PDM(前导图,单代号网络图)<br>（2）ADM(箭线图,双代号网络图)<br>网络图中每一事件必须唯一<br>节点顺序沿箭头方向增大<br>流入(流出)同一节点均有后继活动，虚活动不消耗时间，用虚箭头表示，目的是鉴别，作用是更好的识别活动。</p>
+<p>输入：<strong>项目活动清单</strong>、活动属性、项目范围说明书、组织过程资产</p>
+<p>输出：<strong>项目网络图</strong>、更新的活动清单更新的活动属性</p>
+<h4 id="3-活动资源估算"><a href="#3-活动资源估算" class="headerlink" title="3. 活动资源估算"></a>3. 活动资源估算</h4><p>工具：专家判断、自上而下的估算估算软件</p>
+<p>输入：组织过程资产、<strong>活动清单</strong>、资源可用性</p>
+<p>输出：<strong>活动资源需求</strong>、活动清单(更新)</p>
+<p>工作量是指完成一项活动或其他项目单元所需的人工单位的数量，通常用人小时、人日或人周表示。<br><strong>工作量 = 项目规模/单个资源的工作效率</strong></p>
+<h4 id="4-活动历时估算"><a href="#4-活动历时估算" class="headerlink" title="4. 活动历时估算"></a>4. 活动历时估算</h4><p>工具:<br>（1）专家判断<br>（2）类比估算：以过去类似项目活动的实际时间为基础,通过类比来推测估算当前项目所需的时间<br>（3）参数估算<br>（4）三点估算：(乐观＋4个正常＋悲观) ÷6</p>
+<h4 id="5-制定项目进度计划"><a href="#5-制定项目进度计划" class="headerlink" title="5. 制定项目进度计划"></a>5. 制定项目进度计划</h4><p>项目进度计划要经过多次反复调整才能最后完成，项目进度计划不变是相对的，而变化是绝对的.</p>
+<p>工具:</p>
+<p>1)CPM(关键路线法)<br>关键路径是能够决定项目最早完成时间的一系列活动，它是网络图中最长路径，具有最少的浮动时间或时间差.</p>
+<p><em>活动总时差: 活动最迟开始时间LS — 活动最早开始时间ES</em><br><em>活动自由时差 : min{紧后活动的ES} — 最早完成时间EF</em></p>
+<p>2)PERT(计划评审技术)<br>活动时间期望值   = (乐观＋4个正常＋悲观) ÷6<br>活动时间的标准差 = (悲观－乐观)÷6</p>
+<p>3)持续时间的压缩<br>技术：缩短关键路径上的活动历时<br>方法：赶工(费用交换),快速跟进(并行处理)</p>
+<h4 id="6-项目进度控制"><a href="#6-项目进度控制" class="headerlink" title="6. 项目进度控制"></a>6. 项目进度控制</h4><h5 id="6-1-进度控制的主要内容"><a href="#6-1-进度控制的主要内容" class="headerlink" title="6.1. 进度控制的主要内容"></a>6.1. 进度控制的主要内容</h5><ol>
+<li>确定项目进度的当前状态;</li>
+<li>对影响项目进度变化的因素进行控制,从而确保这些变化朝着有利于项目目标实现的方向发展；</li>
+<li>确定项目进度已经变更；</li>
+<li>当变更发生时，管理实际的变更。</li>
+</ol>
+<h5 id="6-2-项目进度控制的主要步骤"><a href="#6-2-项目进度控制的主要步骤" class="headerlink" title="6.2. 项目进度控制的主要步骤"></a>6.2. 项目进度控制的主要步骤</h5><p>1)分析进度，找出哪些地方需要采取纠正措施；<br>2)确定应采取哪种纠正措施；<br>3)修改进度计划，并将纠正措施列入计划；<br>4)重新计算进度，估计计划采取的纠正措施的效果等。</p>
+<h5 id="6-3-▲▲▲用于缩短活动工期的方法"><a href="#6-3-▲▲▲用于缩短活动工期的方法" class="headerlink" title="6.3. ▲▲▲用于缩短活动工期的方法"></a>6.3. ▲▲▲用于缩短活动工期的方法</h5><p>1)增加优质资源，即投入更多的资源以加速活动进程；<br>2)提高工作效率，即指派经验丰富的人去完成或帮助完成项目工作；<br>3)减小活动范围或降低活动要求；<br>4)加班或并行施工；<br>5)通过改进方法或技术提高生产效率；<br>6)加强沟通和监控等。</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/1995.html" rel="bookmark">笔记-项目进度管理-复习要点</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/896e.html" rel="bookmark">笔记-项目进度管理-资源平衡和资源平滑</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/a657.html" rel="bookmark">笔记-项目进度管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/c2c6.html" rel="bookmark">笔记-论文-成本管理+进度管理（主成本）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/d0db.html" rel="bookmark">笔记-论文-质量管理+进度管理（背诵）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/f4ab.html" rel="bookmark">笔记-案例题-2015年上-进度管理-质量管理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/2193.html" rel="bookmark">笔记-案例题-2016年上-范围管理+沟通管理+进度管理+风险管理</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/1305.html" title="笔记-项目进度管理-精简">https://www.zenwu.site/post/1305.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E8%BF%9B%E5%BA%A6%E7%AE%A1%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 进度管理</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/b8eb.html" rel="prev" title="笔记-项目质量管理-复习要点">
+                  <i class="fa fa-chevron-left"></i> 笔记-项目质量管理-复习要点
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/60bc.html" rel="next" title="笔记-项目采购管理-复习要点">
+                  笔记-项目采购管理-复习要点 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="上月介绍了Git+jekyll，托管在码云（git@osc）上，然而并不尽兴，事实上Git+Hexo会更便捷（对window用户而言），jekyll是ruby编写，而hexo是nodejs 。   Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。jekyll是把原文上传github（md文件），可以直">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github-Hexo-theme-NexT">
+<meta property="og:url" content="https://www.zenwu.site/post/1be4.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="上月介绍了Git+jekyll，托管在码云（git@osc）上，然而并不尽兴，事实上Git+Hexo会更便捷（对window用户而言），jekyll是ruby编写，而hexo是nodejs 。   Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。jekyll是把原文上传github（md文件），可以直">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/0.183261890062568.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/0.12367357255081979.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/0.03426800610440184.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/0.03366818130083549.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/0.8714599287577482.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/33fde566-d2b3-4ea5-9c1d-5f7eac68e64e.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/f2e2bab6-160a-4982-ad3e-f08f6cf09f78.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/0a776216-23d4-48d8-b98a-96f938e78096.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/759463df-5e24-406b-ae9b-476a3484341b.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/27968e2b-d3fa-440c-8e6d-57c9bfb91ab5.png">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/8cf4be10-5e83-4872-ba98-c03f0a8c8b80.jpg">
+<meta property="og:image" content="http://wp-00-wp.qiniudn.com/5c55c6ac-2638-435e-a0b5-def4955cd1e1.png">
+<meta property="article:published_time" content="2017-02-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-21T04:12:15.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="NextT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://wp-00-wp.qiniudn.com/0.183261890062568.png">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/1be4.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>Github-Hexo-theme-NexT | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/1be4.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Github-Hexo-theme-NexT
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-02-02 00:00:00" itemprop="dateCreated datePublished" datetime="2017-02-02T00:00:00+08:00">2017-02-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-05-21 12:12:15" itemprop="dateModified" datetime="2020-05-21T12:12:15+08:00">2020-05-21</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">工作技巧</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>上月介绍了Git+jekyll，托管在码云（git@osc）上，然而并不尽兴，事实上Git+Hexo会更便捷（对window用户而言），jekyll是ruby编写，而hexo是nodejs 。  </p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>jekyll是把原文上传github（md文件），可以直接生成博客，文件也可以用在线编辑修改，而hexo 是本地生成 html 再上传。<br>借着假期，纠结了2天，搭建个人博客，以下记录下这次搭建过程：</p>
+<p>而这次用到的模板是大名鼎鼎的<code>nexT</code>，教程：<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">http://theme-next.iissnan.com/</a> </p>
+ <a id="more"></a> 
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>安装 node，<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a> 在NodeJs官网下载对应版本进行安装。</li>
+<li>安装 git，在Git官网下载对应版本进行安装。步骤如下（借图）：<br><img src="http://wp-00-wp.qiniudn.com/0.183261890062568.png"><br><img src="http://wp-00-wp.qiniudn.com/0.12367357255081979.png"><br><img src="http://wp-00-wp.qiniudn.com/0.03426800610440184.png"><br><img src="http://wp-00-wp.qiniudn.com/0.03366818130083549.png"><br><img src="http://wp-00-wp.qiniudn.com/0.8714599287577482.png"></li>
+</ol>
+<p>可以通过以下命令测试是否安装成功：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git --<span class="keyword">version</span> <span class="comment">#git版本</span></span><br><span class="line">$ <span class="keyword">node</span> <span class="title">--version</span> <span class="comment">#NodeJs版本</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://wp-00-wp.qiniudn.com/33fde566-d2b3-4ea5-9c1d-5f7eac68e64e.png"></p>
+<h2 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h2><p>去 Github 官网进行注册即可，注册完之后记得添加 SSH Key，这个 SSH Key是一个认证，让github识别绑定这台机器，允许这台机器提交。S<br>SH找了个教程，传送门：<a target="_blank" rel="noopener" href="http://blog.csdn.net/hustpzb/article/details/8230454/">http://blog.csdn.net/hustpzb/article/details/8230454/</a><br>检查通过以下命令测试是否安装成功：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
+<p>See :<br><img src="http://wp-00-wp.qiniudn.com/f2e2bab6-160a-4982-ad3e-f08f6cf09f78.png"></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>安装好<code>git</code>和<code>node</code>之后，就可以安装<code>hexo</code>了，简单一句命令搞定:</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
+<p>检查通过以下命令测试是否安装成功：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="built_in">version</span> <span class="comment">#简写hexo v</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://wp-00-wp.qiniudn.com/0a776216-23d4-48d8-b98a-96f938e78096.png"></p>
+<h2 id="创建Hexo本地博客"><a href="#创建Hexo本地博客" class="headerlink" title="创建Hexo本地博客"></a>创建Hexo本地博客</h2><p>安装完成后，执行以下命令，<strong>Hexo</strong>将在指定目录下新建需要的文件</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">init</span> &lt;folder&gt; <span class="meta"># 用命令创建一个目录并且初始化目录hexo文件</span></span><br></pre></td></tr></table></figure>
+<p>PS：</p>
+<ol>
+<li>可以是手动新建文件夹，而后再 <code>$ hexo init</code> 初始化目录；</li>
+<li>hexo会自动下载一套默认皮肤：<code>landscape</code>，整个安装下载过程可能有点慢……</li>
+<li>我是直接在 <code>git bash</code> 里命令的，也可以在其他命令符状态下安装；<br>初始化后需要再 <code>$ npm install</code>  进行npm的依赖插件。</li>
+</ol>
+<p><img src="http://wp-00-wp.qiniudn.com/759463df-5e24-406b-ae9b-476a3484341b.png"></p>
+<h2 id="部署形成文件"><a href="#部署形成文件" class="headerlink" title="部署形成文件"></a>部署形成文件</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">generate</span> # 简写hexo g</span><br></pre></td></tr></table></figure>
+
+<p>最后剩下运行server，跑起hexo服务：</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">server</span> <span class="meta"># 简写hexo s</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://wp-00-wp.qiniudn.com/27968e2b-d3fa-440c-8e6d-57c9bfb91ab5.png"></p>
+<p>浏览器运行 <a target="_blank" rel="noopener" href="http://http//localhost:4000/">http://http://localhost:4000/</a> 就能成功看到了。 </p>
+<p><img src="http://wp-00-wp.qiniudn.com/8cf4be10-5e83-4872-ba98-c03f0a8c8b80.jpg"></p>
+<h3 id="将本地hexo项目托管到Github"><a href="#将本地hexo项目托管到Github" class="headerlink" title="将本地hexo项目托管到Github"></a>将本地hexo项目托管到Github</h3><p>打开网站配置文件 <em>_config.yml</em> （根目录的文件），网站的配置文件，你可以在这里配置一些基本信息，这里列举部分关键配置：<br><img src="http://wp-00-wp.qiniudn.com/5c55c6ac-2638-435e-a0b5-def4955cd1e1.png"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"> </span><br><span class="line"># Site</span><br><span class="line">title: Zenkin.Win ’s Blog #网站的标题</span><br><span class="line">subtitle: 世事如棋，乾坤莫测 #副标题</span><br><span class="line">description: </span><br><span class="line">author: Zen.Woo #作者信息</span><br><span class="line">avatar: /images/avatar.png #头像，图片位置在相应主题目录下的images</span><br><span class="line">language: zh-Hans #中文简体</span><br><span class="line">email: 43002111@qq.com</span><br><span class="line">timezone:</span><br><span class="line"> </span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next #配置主题，这里使用next主题</span><br><span class="line">stylus:</span><br><span class="line">  compress: true #自适应布局</span><br><span class="line"> </span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git #部署环境，基于hexo+githubpage,所以这里使用git。注意：不同版本的hexo，type有可能不同，3.x以后应使用git,具体参看官方文档</span><br><span class="line">  repository: git@github.com:username/username.github.io.git #git仓库地址，替换成你的username即可，其他保持不变，后面会提到如何创建git仓库</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>编辑最后面的 <code>deploy</code> 属性，加入代码：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">type</span>: git</span><br><span class="line"><span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:xxxxxx/xxxxxx.github.io.git #替换github地址，可https可ssh</span><br><span class="line"><span class="attribute">branch</span>: master #分支branch填写master</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装hexo-deployer-git插件"><a href="#安装hexo-deployer-git插件" class="headerlink" title="安装hexo-deployer-git插件"></a>安装hexo-deployer-git插件</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>经常遇到问题是忘记安装，找不到git、</p>
+<h3 id="发布过程遇到问题"><a href="#发布过程遇到问题" class="headerlink" title="发布过程遇到问题"></a>发布过程遇到问题</h3><p>过程中遇到提示，查到是这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deployer not found: github</span><br></pre></td></tr></table></figure>
+<p>遇错情景： 最近从next主题切换到新主题的时候部署时遇到这个问题。<br>报错原因： 没有 <em>hexo-deployer-git</em> 这个东西，所以需要重新安装一次。<br>注意事项： Hexo 3.0以前是使用的是hexo-deployer-github，3.0之后官方更改为hexo-deployer-git<br>解决方法： 重新安装</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git –<span class="keyword">save</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部署你本地的主题到github上"><a href="#部署你本地的主题到github上" class="headerlink" title="部署你本地的主题到github上"></a>部署你本地的主题到github上</h3><p>代码如下，每次修改本地主题，都需要执行以下代码</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br><span class="line"><span class="variable">$ </span>hexo generator <span class="comment">#简写 hexo g</span></span><br><span class="line"><span class="variable">$ </span>hexo deploy <span class="comment">#简写 hexo d #启动本地服务，进行文章预览调试，执行如下命令</span></span><br><span class="line"><span class="variable">$ </span>hexo server <span class="comment">#简写 hexo s</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>next主题说明：<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">http://theme-next.iissnan.com/getting-started.html</a><br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/api/">https://hexo.io/zh-cn/api/</a><br><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/858ecf233db9">http://www.jianshu.com/p/858ecf233db9</a><br>配置SSH <a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html">http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html</a> </p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/post/e76.html" rel="bookmark">Github-Hexo-Qiniu-Sync</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/1be4.html" title="Github-Hexo-theme-NexT">https://www.zenwu.site/post/1be4.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Github/" rel="tag"><i class="fa fa-tag"></i> Github</a>
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/NextT/" rel="tag"><i class="fa fa-tag"></i> NextT</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/778b.html" rel="prev" title="2016年8月份学习总结，读书《书都不会读，你还想成功》">
+                  <i class="fa fa-chevron-left"></i> 2016年8月份学习总结，读书《书都不会读，你还想成功》
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/e76.html" rel="next" title="Github-Hexo-Qiniu-Sync">
+                  Github-Hexo-Qiniu-Sync <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

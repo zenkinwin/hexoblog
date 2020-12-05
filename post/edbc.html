@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zen.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zen.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="baidu-site-verification" content="3a30b71bcaac61d5813132b569f2e115">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="摘选自 GB&#x2F;T 22239-2008《信息安全技术 信息系统安全等级保护基本要求》，详细见全文：http:&#x2F;&#x2F;www.cnitpm.com&#x2F;pm&#x2F;35048.html 基本要求：物理安全、网络安全、主机安全、应用安全、数据安全及备份恢复">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-信息系统安全管理-信息系统安全等级保护基本要求">
+<meta property="og:url" content="https://www.zenwu.site/post/edbc.html">
+<meta property="og:site_name" content="ZenWu.site">
+<meta property="og:description" content="摘选自 GB&#x2F;T 22239-2008《信息安全技术 信息系统安全等级保护基本要求》，详细见全文：http:&#x2F;&#x2F;www.cnitpm.com&#x2F;pm&#x2F;35048.html 基本要求：物理安全、网络安全、主机安全、应用安全、数据安全及备份恢复">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-23T13:12:00.000Z">
+<meta property="article:modified_time" content="2020-10-22T15:28:18.000Z">
+<meta property="article:author" content="Zen.Wu">
+<meta property="article:tag" content="安全等级保护">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zenwu.site/post/edbc.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>笔记-信息系统安全管理-信息系统安全等级保护基本要求 | ZenWu.site</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="ZenWu.site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">ZenWu.site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">存一些内容，记一点文字</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-介绍"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>介绍</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zen.Wu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zen.Wu</p>
+  <div class="site-description" itemprop="description">存一些内容，记一点文字</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">271</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zenwu.site/post/edbc.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zen.Wu">
+      <meta itemprop="description" content="存一些内容，记一点文字">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZenWu.site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔记-信息系统安全管理-信息系统安全等级保护基本要求
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-23 21:12:00" itemprop="dateCreated datePublished" datetime="2020-07-23T21:12:00+08:00">2020-07-23</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-10-22 23:28:18" itemprop="dateModified" datetime="2020-10-22T23:28:18+08:00">2020-10-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">信息系统安全管理</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>摘选自 <strong>GB/T 22239-2008《信息安全技术 信息系统安全等级保护基本要求》</strong>，详细见全文：<a target="_blank" rel="noopener" href="http://www.cnitpm.com/pm/35048.html">http://www.cnitpm.com/pm/35048.html</a></p>
+<p>基本要求：物理安全、网络安全、主机安全、应用安全、数据安全及备份恢复</p>
+<a id="more"></a>
+
+<h3 id="6-第二级基本要求"><a href="#6-第二级基本要求" class="headerlink" title="6　第二级基本要求"></a>6　第二级基本要求</h3><h4 id="6-1-技术要求"><a href="#6-1-技术要求" class="headerlink" title="6.1　技术要求"></a>6.1　技术要求</h4><h5 id="6-1-1-物理安全"><a href="#6-1-1-物理安全" class="headerlink" title="6.1.1　物理安全"></a>6.1.1　物理安全</h5><p>6.1.1.1　物理位置的选择（G2）</p>
+<p>机房和办公场地应选择在具有<strong>防震、防风和防雨</strong>等能力的建筑内。</p>
+<p>6.1.1.2　物理访问控制（G2）</p>
+<p>本项要求包括：<br>a) 机房出入口应安排<strong>专人值守</strong>，控制、鉴别和记录进入的人员；<br>b) 需<strong>进入机房的来访人员应经过申请和审批流程，并限制和监控其活动范围</strong>。</p>
+<p>6.1.1.3　防盗窃和防破坏（G2）</p>
+<p>本项要求包括：<br>a) 应将主要设备放置在机房内；<br>b) 应将设备或主要部件进行固定，并设置明显的不易除去的标记；<br>c) 应将通信线缆铺设在<strong>隐蔽处，可铺设在地下或管道中</strong>；<br>d) 应对介质分类标识，<strong>存储在介质库或档案</strong>室中；<br>e) 主机房应安装必要的<strong>防盗报警</strong>设施。</p>
+<p>6.1.1.4　防雷击（G2）</p>
+<p>本项要求包括：<br>a) 机房建筑应设置<strong>避雷</strong>装置；<br>b) 机房应设置<strong>交流电源地线</strong>。</p>
+<p>6.1.1.5　防火（G2）</p>
+<p>机房应设置<strong>灭火设备和火灾自动报警系统</strong>。</p>
+<p>6.1.1.6　防水和防潮（G2）</p>
+<p>本项要求包括：<br>a) 水管安装，<strong>不得穿过机房屋顶</strong>和活动地板下；<br>b) 应采取措施<strong>防止雨水</strong>通过机房窗户、屋顶和墙壁渗透；<br>c) 应采取措施<strong>防止机房内水蒸气结露和地下积水的转移与渗透</strong>。</p>
+<p>6.1.1.7　防静电（G2）</p>
+<p>关键设备应采用必要的<strong>接地防静电措施</strong>。</p>
+<p>6.1.1.8　温湿度控制（G2）</p>
+<p>机房应设置<strong>温、湿度自动调节设施</strong>，使机房温、湿度的变化在设备运行所允许的范围之内。</p>
+<p>6.1.1.9　电力供应（A2）</p>
+<p>本项要求包括：<br>a) 应在机房供电线路上配置<strong>稳压器和过电压防护设备</strong>；<br>b) 应提供短期的<strong>备用电力</strong>供应，至少满足关键设备在断电情况下的正常运行要求。</p>
+<p>6.1.1.10　电磁防护（S2）</p>
+<p>电源线和通信线缆应<strong>隔离铺设</strong>，避免互相干扰。</p>
+<h5 id="6-1-2-网络安全"><a href="#6-1-2-网络安全" class="headerlink" title="6.1.2　网络安全"></a>6.1.2　网络安全</h5><p>6.1.2.1　结构安全（G2）</p>
+<p>本项要求包括：<br>a) 应保证关键网络设备的业务处理能力具备<strong>冗余空间</strong>，满足业务<strong>高峰期</strong>需要；<br>b) 应保证接入网络和核心网络的带宽<strong>满足业务高峰期需要</strong>；<br>c) 应绘制与当前运行情况相符的<strong>网络拓扑结构图</strong>；<br>d) 应根据各部门的工作职能、重要性和所涉及信息的重要程度等因素，<strong>划分不同的子网或网段</strong>，并按照方便管理和控制的原则为各子网、网段分配地址段。</p>
+<p>6.1.2.2　访问控制（G2）</p>
+<p>本项要求包括：<br>a) 应在<strong>网络边界部署访问控制设备</strong>，启用访问控制功能；<br>b) 应能根据会话状态信息为<strong>数据流提供明确的允许/拒绝访问的能力</strong>，控制粒度为网段级。<br>c) 应按<strong>用户和系统之间的允许访问规则</strong>，决定允许或拒绝用户对受控系统进行资源访问，控制粒度为单个用户；<br>d) 应限制具有拨号访问权限的用户数量。</p>
+<p>6.1.2.3　安全审计（G2）</p>
+<p>本项要求包括：<br>a) 应对网络系统中的网络设备<strong>运行状况、网络流量、用户行为等进行日志记录</strong>；<br>b) 审计记录应包括<strong>事件的日期和时间、用户、事件类型、事件是否成功及其他与审计相关</strong>的信息。</p>
+<p>6.1.2.4　边界完整性检查（S2）</p>
+<p>应能够对内部网络中出现的<strong>内部用户未通过准许私自联到外部网络的行为进行检查</strong>。</p>
+<p>6.1.2.5　入侵防范（G2）</p>
+<p>应在网络边界处<strong>监视以下攻击行为</strong>：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等。</p>
+<p>6.1.2.6　网络设备防护（G2）</p>
+<p>本项要求包括：<br>a) 应对登录网络设备的用户进行<strong>身份鉴别</strong>；<br>b) 应对网络设备的管理员登录地址进行<strong>限制</strong>；<br>c) 网络设备用户的<strong>标识应唯一</strong>；<br>d) 身份鉴别信息应具有不易被冒用的特点，口令应有复杂度要求并定期更换；<br>e) 应具有登录失败处理功能，可采取结束会话、限制非法登录次数和当网络登录连接超时自动退出等措施；<br>f) 当对网络设备进行远程管理时，应采取必要措施防止鉴别信息在网络传输过程中被窃听。</p>
+<h5 id="6-1-3-主机安全"><a href="#6-1-3-主机安全" class="headerlink" title="6.1.3　主机安全"></a>6.1.3　主机安全</h5><p>6.1.3.1　身份鉴别（S2）</p>
+<p>本项要求包括：<br>a) 应对<strong>登录操作系统和数据库系统的用户进行身份标识和鉴别</strong>；<br>b) 操作系统和数据库系统管理用户身份标识应具有<strong>不易被冒用</strong>的特点，口令应有复杂度要求并定期更换；<br>c) 应启用登录失败处理功能，可采取<strong>结束会话、限制非法登录次数和自动退出</strong>等措施；<br>d) 当对服务器进行远程管理时，应采取必要措施，防止鉴别信息在网络传输过程中被窃听；<br>e) 应为操作系统和数据库系统的不同用户分配不同的用户名，确保用户名具有唯一性。</p>
+<p>6.1.3.2　访问控制（S2）</p>
+<p>本项要求包括：<br>a) 应启用访问<strong>控制功能，依据安全策略控制用户对资源的访问</strong>；<br>b) 应实现操作系统和数据库系统特权用户的权限分离；<br>c) 应限制默认帐户的访问权限，重命名系统默认帐户，修改这些帐户的默认口令；<br>d) 应及时删除多余的、过期的帐户，避免共享帐户的存在。</p>
+<p>6.1.3.3　安全审计（G2）</p>
+<p>本项要求包括：<br>a) 审计范围应覆盖到服务器上的每个操作系统用户和数据库用户；<br>b) 审计内容应包括重要用户行为、系统资源的异常使用和重要系统命令的使用等系统内重要的安全相关事件；<br>c) 审计记录应包括事件的日期、时间、类型、主体标识、客体标识和结果等；<br>d) 应保护审计记录，避免受到未预期的删除、修改或覆盖等。</p>
+<p>6.1.3.4　入侵防范（G2）</p>
+<p>操作系统应<strong>遵循最小安装的原则</strong>，仅安装需要的组件和应用程序，并通过设置升级服务器等方式保持系统补丁及时得到更新。</p>
+<p>6.1.3.5　恶意代码防范（G2）</p>
+<p>本项要求包括：<br>a) 应安装<strong>防恶意代码软件</strong>，并及时更新防恶意代码软件版本和恶意代码库；<br>b) 应支持防恶意代码软件的统一管理。</p>
+<p>6.1.3.6　资源控制（A2）</p>
+<p>本项要求包括：<br>a) 应通过<strong>设定终端接入方式</strong>、网络地址范围等条件限制终端登录；<br>b) 应根据安全策略设置登录终端的操作超时锁定；<br>c) 应限制单个用户对系统资源的最大或最小使用限度。</p>
+<h5 id="6-1-4-应用安全"><a href="#6-1-4-应用安全" class="headerlink" title="6.1.4　应用安全"></a>6.1.4　应用安全</h5><p>6.1.4.1　身份鉴别（S2）</p>
+<p>本项要求包括：</p>
+<p>a) 应提供<strong>专用的登录控制模块</strong>对登录用户进行身份标识和鉴别；<br>b) 应提供用户身份标识唯一和鉴别信息复杂度检查功能，保证应用系统中不存在重复用户身份标识，身份鉴别信息不易被冒用；<br>c) 应提供登录失败处理功能，可采取结束会话、限制非法登录次数和自动退出等措施；<br>d) 应启用身份鉴别、用户身份标识唯一性检查、用户身份鉴别信息复杂度检查以及登录失败处理功能，并根据安全策略配置相关参数。</p>
+<p>6.1.4.2　访问控制（S2）</p>
+<p>本项要求包括：<br>a) 应提供访问控制功能，依据安全策略控制用户对文件、数据库表等客体的访问；<br>b) 访问控制的覆盖范围应包括与资源访问相关的主体、客体及它们之间的操作；<br>c) 应由<strong>授权主体配置访问控制策略</strong>，并严格限制默认帐户的访问权限；<br>d) 应授予不同帐户为完成各自承担任务所需的最小权限，并在它们之间形成相互制约的关系。</p>
+<p>6.1.4.3　安全审计（G2）</p>
+<p>本项要求包括：<br>a) 应提供覆盖到<strong>每个用户的安全审计</strong>功能，对应用系统重要安全事件进行审计；<br>b) 应保证无法删除、修改或覆盖审计记录；<br>c) 审计记录的内容至少应包括事件日期、时间、发起者信息、类型、描述和结果等。</p>
+<p>6.1.4.4　通信完整性（S2）</p>
+<p>应采用校验码技术保证通信过程中数据的完整性。</p>
+<p>6.1.4.5　通信保密性（S2）</p>
+<p>本项要求包括：<br>a) 在通信双方建立连接之前，应用系统应利用密码技术进行会话<strong>初始化验证</strong>；<br>b) 应对通信过程中的<strong>敏感信息字段</strong>进行加密。</p>
+<p>6.1.4.6　软件容错（A2）</p>
+<p>本项要求包括：<br>a) 应提供数据有效性检验功能，保证通过人机接口输入或通过通信接口输入的数据格式或长度符合系统设定要求；<br>b) 在故障发生时，应用系统应能够继续提供一部分功能，确保能够实施必要的措施。</p>
+<p>6.1.4.7　资源控制（A2）</p>
+<p>本项要求包括：<br>a) 当应用系统的通信双方中的一方在一段时间内未作任何响应，另一方应能够自动结束会话；<br>b) 应能够对应用系统的<strong>最大并发会话连接数进行限制</strong>；<br>c) 应能够对单个帐户的<strong>多重并发会话进行限制</strong>。</p>
+<h5 id="6-1-5-数据安全及备份恢复"><a href="#6-1-5-数据安全及备份恢复" class="headerlink" title="6.1.5　数据安全及备份恢复"></a>6.1.5　数据安全及备份恢复</h5><p>6.1.5.1　数据完整性（S2）</p>
+<p>应能够检测到鉴别信息和重要业务数据在传输过程中完整性受到破坏。</p>
+<p>6.1.5.2　数据保密性（S2）</p>
+<p>应采用加密或其他保护措施实现鉴别信息的存储保密性。</p>
+<p>6.1.5.3　备份和恢复（A2）</p>
+<p>本项要求包括：<br>a) 应能够对重要信息进<strong>备份和恢复</strong>；<br>b) 应提供关键网络设备、通信线路和数据处理系统的硬件冗余，保证系统的可用性。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zen.Wu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zenwu.site/post/edbc.html" title="笔记-信息系统安全管理-信息系统安全等级保护基本要求">https://www.zenwu.site/post/edbc.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%AE%89%E5%85%A8%E7%AD%89%E7%BA%A7%E4%BF%9D%E6%8A%A4/" rel="tag"><i class="fa fa-tag"></i> 安全等级保护</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/d8b0.html" rel="prev" title="笔记-信息系统安全管理-安全审计">
+                  <i class="fa fa-chevron-left"></i> 笔记-信息系统安全管理-安全审计
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/4552.html" rel="next" title="笔记-企业管理知识-知识管理工具">
+                  笔记-企业管理知识-知识管理工具 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020117069号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2002 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zen.Wu</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">428k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.5" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+<script src="/js/local-search.js"></script>
+
+
+
+
+<script>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+</body>
+</html>
