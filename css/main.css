@@ -3206,16 +3206,6 @@ body {
 .posts-expand .post-header {
   margin-bottom: 30px;
 }
-/*
-figure.highlight {
-    background: #21252b;
+.search-active .header-inner {
+  opacity: 1;
 }
-
-figure.highlight .gutter pre {
-    background: #eff2f3;
-}
-
-figure.highlight .code pre {
-    background: #f7f7f7;
-}
-*/

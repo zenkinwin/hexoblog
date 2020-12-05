@@ -6,7 +6,7 @@
   <link href="https://www.zenwu.site/atom.xml" rel="self"/>
   
   <link href="https://www.zenwu.site/"/>
-  <updated>2020-12-05T02:42:19.892Z</updated>
+  <updated>2020-11-26T07:32:31.042Z</updated>
   <id>https://www.zenwu.site/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>测试</title>
-    <link href="https://www.zenwu.site/post/938d.html"/>
-    <id>https://www.zenwu.site/post/938d.html</id>
-    <published>2020-12-05T02:42:18.000Z</published>
-    <updated>2020-12-05T02:42:19.892Z</updated>
-    
-    <content type="html"><![CDATA[<p>11</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;11&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>js中const,var,let区别与用法</title>
@@ -109,13 +88,13 @@
     <category term="vue" scheme="https://www.zenwu.site/categories/vue/"/>
     
     
+    <category term="vue" scheme="https://www.zenwu.site/tags/vue/"/>
+    
     <category term="v-text" scheme="https://www.zenwu.site/tags/v-text/"/>
     
     <category term="v-html" scheme="https://www.zenwu.site/tags/v-html/"/>
     
     <category term="v-model" scheme="https://www.zenwu.site/tags/v-model/"/>
-    
-    <category term="vue" scheme="https://www.zenwu.site/tags/vue/"/>
     
   </entry>
   
@@ -140,9 +119,9 @@
     <category term="vue" scheme="https://www.zenwu.site/categories/vue/"/>
     
     
-    <category term="vue" scheme="https://www.zenwu.site/tags/vue/"/>
-    
     <category term="v-on" scheme="https://www.zenwu.site/tags/v-on/"/>
+    
+    <category term="vue" scheme="https://www.zenwu.site/tags/vue/"/>
     
   </entry>
   
@@ -423,9 +402,9 @@
     <category term="项目整体管理" scheme="https://www.zenwu.site/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E9%A1%B9%E7%9B%AE%E6%95%B4%E4%BD%93%E7%AE%A1%E7%90%86/"/>
     
     
-    <category term="整体管理" scheme="https://www.zenwu.site/tags/%E6%95%B4%E4%BD%93%E7%AE%A1%E7%90%86/"/>
-    
     <category term="变更管理" scheme="https://www.zenwu.site/tags/%E5%8F%98%E6%9B%B4%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="整体管理" scheme="https://www.zenwu.site/tags/%E6%95%B4%E4%BD%93%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -593,6 +572,47 @@
     <category term="软件运行与维护" scheme="https://www.zenwu.site/tags/%E8%BD%AF%E4%BB%B6%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
     
     <category term="维护活动" scheme="https://www.zenwu.site/tags/%E7%BB%B4%E6%8A%A4%E6%B4%BB%E5%8A%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔记-信息系统开发基础-软件测试-软件测试的类型</title>
+    <link href="https://www.zenwu.site/post/9777.html"/>
+    <id>https://www.zenwu.site/post/9777.html</id>
+    <published>2020-10-31T06:59:47.000Z</published>
+    <updated>2020-10-31T07:05:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本题考查软件测试的类型相关知识，请参考《信息系统项目管理师教程》第3版P50</p><p><strong>（1）单元测试</strong><br>单元测试也称为模块测试，测试的对象是可独立编译或汇编的程序模块、软件构件或00软件中的类（统称为模块），其目的是检查每个模块能否正确地实现设计说明中的功能、性能、接口和其他设计约束等条件，发现模块内可能存在的各种差错。单元测试的技术依据是软件详细设计说明书，着重从模块接口、局部数据结构、重要的执行通路、出错处理通路和边界条件等方面对模块进行测试。</p><p><strong>（2）集成测试</strong><br>集成测试的目的是检查模块之间，以及模块和已集成的软件之间的接口关系，并验证己集成的软件是否符合设计要求。集成测试的技术依据是软件概要设、计文档。除应满足一般的测试准入条件外，在进行集成测试前还应确认待测试的模块均已通过单元测试。</p><p><strong>（3）确认测试</strong><br><em>确认测试主要用于验证软件的功能、性能和其他特性是否与用户需求一致</em>。根据用户的参与程度，通常包括以下类型。（本题正确答案）</p><p>—内部确认测试。内部确认测试主要由软件开发组织内部按照SRS进行测试。<br>—Alpha测试和Beta测试。对于通用产品型的软件开发而言，Alpha测试是指由用户在开发环境下进行测试，通过Alpha测拭以后的产品通常称为Alpha版；Beta,测试是指由用户在实际使用环境下进行测试，通过Beta测试的产品通常称为Beta版。一般在通过Beta测试后，才能把产品发布或交付给用户。<br>—验收测试。<strong>验收测试</strong>是指<em>针对SRS，在交付前以用户为主进行的测试</em>。其测试对象为完整的、集成的计算机系统。验收测试的目的是，在真实的用户工作环境下,检验软件系统是否满足开发技术合同或SRS。<strong>验收测试的结论是用户确定是否接收该软件的主要依据</strong>。除应满足一般测试的准入条件外，在进行验收测试之前，应确认被测软件系统已通过系统测试。</p><p><strong>(4)系统测试</strong><br>系统测试的对象是完整的、集成的计算机系统，系统测试的目的是在<strong>真实系统</strong>工作环境下，验证完整的软件配置项能否和系统正确连接，并满足系统/子系统设计文档和<strong>软件开发合同规定的要求</strong>。<strong>系统测试的技术依据是用户需求或开发合同</strong>，除应满足一般测试的准入条件外，在进行系统测试前，还应确认被测系统的所有配置项已通过测试，对需要固化运行的软件还应提供固件。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本题考查软件测试的类型相关知识，请参考《信息系统项目管理师教程》第3版P50&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;（1）单元测试&lt;/strong&gt;&lt;br&gt;单元测试也称为模块测试，测试的对象是可独立编译或汇编的程序模块、软件构件或00软件中的类（统称为模块），其目的是检查每个模块能</summary>
+      
+    
+    
+    
+    <category term="信息系统项目管理师" scheme="https://www.zenwu.site/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/"/>
+    
+    <category term="信息系统开发基础" scheme="https://www.zenwu.site/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="软件测试" scheme="https://www.zenwu.site/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="软件测试的类型" scheme="https://www.zenwu.site/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%9A%84%E7%B1%BB%E5%9E%8B/"/>
+    
+    <category term="测试" scheme="https://www.zenwu.site/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="单元测试" scheme="https://www.zenwu.site/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="集成测试" scheme="https://www.zenwu.site/tags/%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="验收测试" scheme="https://www.zenwu.site/tags/%E9%AA%8C%E6%94%B6%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="确认测试" scheme="https://www.zenwu.site/tags/%E7%A1%AE%E8%AE%A4%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="系统测试" scheme="https://www.zenwu.site/tags/%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
