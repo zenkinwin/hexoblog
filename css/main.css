@@ -1794,6 +1794,7 @@ pre code {
   color: ;
   display: inline-block;
   margin: 0 5px;
+  animation: icon-animate 1.33s ease-in-out infinite;
 }
 @-moz-keyframes icon-animate {
   0%, 100% {
@@ -3184,9 +3185,19 @@ body {
 .main {
   margin-top: 10px;
 }
+/* 图片下描述 */
+.post-body .image-caption,
+.post-body .figure .caption {
+  margin-top: -10px;
+  font-weight: normal;
+}
 .footer-inner,
 .footer-inner a {
   color: #f1f2f4;
+  border: none;
+}
+.footer-inner img {
+  display: inline;
 }
 .sidebar {
   border-radius: 10px 10px 10px 10px;
@@ -3208,4 +3219,30 @@ body {
 }
 .search-active .header-inner {
   opacity: 1;
+}
+@media (max-width: 767px) {
+  .post-block {
+    margin: 10px 10px 0 10px !important;
+  }
+  .header-inner {
+    margin: 0px 10px 0 10px !important;
+  }
+}
+@media (max-width: 991px) {
+  .header-inner {
+    border-radius: 10px;
+    margin: 0px 10px 0 10px !important;
+  }
+}
+.links-of-blogroll {
+  text-align: left;
+  margin: 0 10px;
+  margin-top: 15px;
+  font-size: 12px;
+}
+.links-of-blogroll-title {
+  text-align: center;
+}
+.links-of-blogroll-list {
+  color: #999;
 }
