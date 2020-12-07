@@ -24,16 +24,16 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"www.zenwu.site","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;buding_pmp&#x2F;article&#x2F;details&#x2F;54881486，有增删。   一、RACI产生背景RACI是项目管理中的人力资源管理方法。一个项目团队的成员往往来自于不同背景的各个部门，这些成员受部门经理和项目经理的双重管辖。由于这些人往往是临时组织起来的，并且项目的各个阶段扮演不同的角色，而项目的任务又很紧迫，因此，项目管理中的人力">
+<meta name="description" content="原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;buding_pmp&#x2F;article&#x2F;details&#x2F;54881486，有增删。  一、RACI产生背景RACI是项目管理中的人力资源管理方法。一个项目团队的成员往往来自于不同背景的各个部门，这些成员受部门经理和项目经理的双重管辖。由于这些人往往是临时组织起来的，并且项目的各个阶段扮演不同的角色，而项目的任务又很紧迫，因此，项目管理中的人力资">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RACI职责分配矩阵模型使用详解及案例分析">
 <meta property="og:url" content="https://www.zenwu.site/post/c69e.html">
 <meta property="og:site_name" content="ZenWu.site">
-<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;buding_pmp&#x2F;article&#x2F;details&#x2F;54881486，有增删。   一、RACI产生背景RACI是项目管理中的人力资源管理方法。一个项目团队的成员往往来自于不同背景的各个部门，这些成员受部门经理和项目经理的双重管辖。由于这些人往往是临时组织起来的，并且项目的各个阶段扮演不同的角色，而项目的任务又很紧迫，因此，项目管理中的人力">
+<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;buding_pmp&#x2F;article&#x2F;details&#x2F;54881486，有增删。  一、RACI产生背景RACI是项目管理中的人力资源管理方法。一个项目团队的成员往往来自于不同背景的各个部门，这些成员受部门经理和项目经理的双重管辖。由于这些人往往是临时组织起来的，并且项目的各个阶段扮演不同的角色，而项目的任务又很紧迫，因此，项目管理中的人力资">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/04/22/lVwQuN29kem54Xa.png">
 <meta property="article:published_time" content="2020-04-21T13:00:16.000Z">
-<meta property="article:modified_time" content="2020-12-06T12:52:33.621Z">
+<meta property="article:modified_time" content="2020-12-07T15:42:04.766Z">
 <meta property="article:author" content="Zen.Wu">
 <meta property="article:tag" content="raci">
 <meta property="article:tag" content="资源管理">
@@ -178,7 +178,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -191,6 +191,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81RACI%E4%BA%A7%E7%94%9F%E8%83%8C%E6%99%AF"><span class="nav-text">一、RACI产生背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81RACI%E5%85%B7%E4%BD%93%E9%87%8A%E4%B9%89"><span class="nav-text">二、RACI具体释义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81RACI%E7%9A%84%E7%94%A8%E9%80%94%E5%8F%8A%E4%BC%98%E5%8A%BF"><span class="nav-text">三、RACI的用途及优势</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89RACI%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E6%83%85%E6%99%AF"><span class="nav-text">（一）RACI模型应用情景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E6%8C%89%E7%85%A7RACI%E7%9A%84%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E8%80%8C%E5%85%B7%E6%9C%89%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-text">（二）按照RACI的作用范围而具有的优势</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%98%8E%E7%A1%AE%E6%AF%8F%E4%B8%80%E4%B8%AA%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98%E7%9A%84%E5%88%86%E5%B7%A5"><span class="nav-text">1. 明确每一个团队成员的分工</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%AE%9A%E4%B9%89%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98%E4%B9%8B%E9%97%B4%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-text">2. 定义团队成员之间的联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E8%AF%8A%E6%96%AD%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%83%85%E5%86%B5"><span class="nav-text">3. 诊断项目资源配置情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81RACI%E6%9D%83%E8%B4%A3%E5%88%86%E9%85%8D%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4"><span class="nav-text">四、RACI权责分配设计步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E7%A1%AE%E5%AE%9A%E5%B7%A5%E4%BD%9C%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%86%B3%E5%AE%9A%E4%BA%8B%E9%A1%B9%EF%BC%88%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%89"><span class="nav-text">（一）确定工作任务和决定事项（做什么）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%87%86%E5%A4%87%E5%8F%82%E4%B8%8E%E8%80%85%E7%9A%84%E8%81%8C%E8%B4%A3%E6%B8%85%E5%8D%95-%E8%B0%81%E5%81%9A%EF%BC%89"><span class="nav-text">（二）准备参与者的职责清单 (谁做）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%88%9D%E6%AD%A5%E5%BB%BA%E7%AB%8BRACI%E8%A1%A8"><span class="nav-text">（三）初步建立RACI表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E8%8E%B7%E5%BE%97%E5%8F%8D%E9%A6%88%EF%BC%8C%E8%BE%BE%E6%88%90%E5%8D%8F%E8%AE%AE"><span class="nav-text">（四）获得反馈，达成协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%BA%94%EF%BC%89%E8%A1%A8%E6%A0%BC%E5%88%86%E6%9E%90%E4%B8%8E%E6%A3%80%E6%9F%A5"><span class="nav-text">（五）表格分析与检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E5%85%AD%EF%BC%89%E5%BB%BA%E6%A1%A3%E5%B9%B6%E5%85%AC%E5%91%8A%EF%BC%8C%E6%8A%95%E5%85%A5%E6%89%A7%E8%A1%8C"><span class="nav-text">（六）建档并公告，投入执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%B8%83%EF%BC%89%E5%90%8E%E7%BB%AD%E5%BC%BA%E5%8C%96%E8%BF%BD%E8%B8%AA"><span class="nav-text">（七）后续强化追踪</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81RACI%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">五、RACI使用注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E8%A7%A3%E5%86%B3%E4%BA%A4%E5%8F%A0%E5%8F%8A%E7%BC%BA%E5%8F%A3%E9%97%AE%E9%A2%98"><span class="nav-text">（一）解决交叠及缺口问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E6%98%8E%E7%A1%AE%E6%9D%83%E8%B4%A3%E5%AF%B9%E5%BA%94%E4%BA%BA%E6%95%B0"><span class="nav-text">（二）明确权责对应人数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E6%B3%A8%E9%87%8DA%E7%9A%84%E8%B5%84%E6%A0%BC%E7%AC%A6%E5%90%88%E7%A8%8B%E5%BA%A6"><span class="nav-text">（三）注重A的资格符合程度</span></a></li></ol></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -199,28 +200,59 @@
     <img class="site-author-image" itemprop="image" alt="Zen.Wu"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">Zen.Wu</p>
-  <div class="site-description" itemprop="description">举沧浪，浊尘缨，清越嵯峨忘青冥，逸翾拂霄凌云汉，侠路难，蜀道行。</div>
+  <div class="site-description" itemprop="description">
+
+  <div id="binft"></div>
+  <script>var binft =function (r) {function t() {return b[Math.floor(Math.random() *b.length)]
+  } 
+  function e() {return String.fromCharCode(94 *Math.random() + 33)
+  }
+  function n(r) {for (var n =document.createDocumentFragment(),i =0;r >i;i++) {var l =document.createElement("span");l.textContent =e(),l.style.color =t(),n.appendChild(l)
+  }
+  return n
+  }
+  function i() {var t =o[c.skillI];c.step ?c.step-- :(c.step =g,c.prefixP < l.length ?(c.prefixP >=0 &&(c.text +=l[c.prefixP]),c.prefixP++) :"forward" ===c.direction ?c.skillP < t.length ?(c.text +=t[c.skillP],c.skillP++) :c.delay ?c.delay-- :(c.direction ="backward",c.delay =a) :c.skillP >0 ?(c.text =c.text.slice(0,-1),c.skillP--) :(c.skillI =(c.skillI + 1) % o.length,c.direction ="forward")),r.textContent =c.text,r.appendChild(n(c.prefixP < l.length ?Math.min(s,s + c.prefixP) :Math.min(s,t.length - c.skillP))),setTimeout(i,d)
+  }
+  var l ="",o =["蹉跎错，消磨过，最是光阴化浮沫。"].map(function (r) {return r + ""
+  }),a =2,g =1,s =5,d =75,b =["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],c ={text:"",prefixP:-s,skillI:0,skillP:0,direction:"forward",delay:a,step:g
+  };i()
+  };binft(document.getElementById('binft'));</script>
+
+
+
+  
+  
+  
+  </div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-count">226</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">275</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="tencent://message/?uin=43002111&Site=zenwu&Menu=yes" title="QQ → tencent:&#x2F;&#x2F;message&#x2F;?uin&#x3D;43002111&amp;Site&#x3D;zenwu&amp;Menu&#x3D;yes" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zenkin@163.com" title="E-Mail → mailto:zenkin@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
 
 
 
@@ -236,47 +268,32 @@
         
         
           <li>
-            <a href="/post/298c.html" title="Hexo+腾讯CVM+又拍云+github+gitee+coding" target="_blank">Hexo+腾讯CVM+又拍云+github+gitee+coding</a>
+            <a href="/post/8f53.html" title="转：越早明白这四个道理越好!" target="_blank">转：越早明白这四个道理越好!</a>
 
-<time title="修改时间：2020-12-06 22:55:48" itemprop="dateModified" datetime="2020-12-06T22:55:48+08:00">2020-12-06</time>
-
-
-          </li>
-        
-          <li>
-            <a href="/post/c69e.html" title="RACI职责分配矩阵模型使用详解及案例分析" target="_blank">RACI职责分配矩阵模型使用详解及案例分析</a>
-
-<time title="修改时间：2020-12-06 20:52:33" itemprop="dateModified" datetime="2020-12-06T20:52:33+08:00">2020-12-06</time>
+<time title="修改时间：2020-12-08 00:46:33" itemprop="dateModified" datetime="2020-12-08T00:46:33+08:00">2020-12-08</time>
 
 
           </li>
         
           <li>
-            <a href="/post/9536.html" title="笔记-项目立项管理与招投标管理-复习要点" target="_blank">笔记-项目立项管理与招投标管理-复习要点</a>
+            <a href="/post/15b3.html" title="Visual Studio Code 常用快捷键" target="_blank">Visual Studio Code 常用快捷键</a>
 
-<time title="修改时间：2020-12-06 15:11:29" itemprop="dateModified" datetime="2020-12-06T15:11:29+08:00">2020-12-06</time>
-
-
-          </li>
-        
-          <li>
-            <a href="/post/2925.html" title="笔记-项目立项管理-项目论证的内容" target="_blank">笔记-项目立项管理-项目论证的内容</a>
-
-<time title="修改时间：2020-12-06 15:11:22" itemprop="dateModified" datetime="2020-12-06T15:11:22+08:00">2020-12-06</time>
+<time title="修改时间：2020-12-08 00:46:18" itemprop="dateModified" datetime="2020-12-08T00:46:18+08:00">2020-12-08</time>
 
 
           </li>
         
           <li>
-            <a href="/post/c0ed.html" title="笔记-项目立项管理-项目论证的程序" target="_blank">笔记-项目立项管理-项目论证的程序</a>
+            <a href="/post/b51e.html" title="SiteAzure-Partial-v1 20171024" target="_blank">SiteAzure-Partial-v1 20171024</a>
 
-<time title="修改时间：2020-12-06 15:11:19" itemprop="dateModified" datetime="2020-12-06T15:11:19+08:00">2020-12-06</time>
+<time title="修改时间：2020-12-08 00:46:18" itemprop="dateModified" datetime="2020-12-08T00:46:18+08:00">2020-12-08</time>
 
 
           </li>
         
       </ul>
     </div>
+
 
 
         </section>
@@ -293,6 +310,7 @@
     </header>
 
     
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -315,7 +333,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Zen.Wu">
-      <meta itemprop="description" content="举沧浪，浊尘缨，清越嵯峨忘青冥，逸翾拂霄凌云汉，侠路难，蜀道行。">
+      <meta itemprop="description" content="蹉跎错，消磨过，最是光阴化浮沫。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -341,7 +359,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-06 20:52:33" itemprop="dateModified" datetime="2020-12-06T20:52:33+08:00">2020-12-06</time>
+        <time title="修改时间：2020-12-07 23:42:04" itemprop="dateModified" datetime="2020-12-07T23:42:04+08:00">2020-12-07</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -350,6 +368,10 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" itemprop="url" rel="index"><span itemprop="name">信息系统项目管理师</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/%E9%A1%B9%E7%9B%AE%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">项目人力资源管理</span></a>
         </span>
     </span>
 
@@ -380,7 +402,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
-<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/buding_pmp/article/details/54881486">https://blog.csdn.net/buding_pmp/article/details/54881486</a>，有增删。 </p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/buding_pmp/article/details/54881486">https://blog.csdn.net/buding_pmp/article/details/54881486</a>，有增删。</p>
 </blockquote>
 <h2 id="一、RACI产生背景"><a href="#一、RACI产生背景" class="headerlink" title="一、RACI产生背景"></a>一、RACI产生背景</h2><p>RACI是项目管理中的人力资源管理方法。一个项目团队的成员往往来自于不同背景的各个部门，这些成员受部门经理和项目经理的双重管辖。由于这些人往往是临时组织起来的，并且项目的各个阶段扮演不同的角色，而项目的任务又很紧迫，因此，项目管理中的人力资源管理出现了不同于传统人力资源管理的新特点：</p>
 <a id="more"></a>
@@ -592,14 +614,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">429k</span>
+    <span title="站点总字数">433k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:30</span>
+    <span title="站点阅读时长">6:34</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
