@@ -1,0 +1,39 @@
+---
+title: nginx配置ssl（配置文件）
+categories:
+  - Linux
+tags:
+  - linux
+  - nginx
+abbrlink: dc89
+date: 2020-11-20 14:09:25
+---
+
+nginx配置ssl（配置文件），只列出部分内容。
+
+```
+# http server
+server {
+    listen       80;
+    server_name  www.zenwu.site zenwu.site;
+
+    # 将Http请求转化成Https请求
+    return 301 https://$server_name$request_uri;
+}
+
+# HTTPS server
+server {
+    listen       443 ssl;
+    server_name  www.zenwu.site zenwu.site;
+    ssl_certificate      /home/ssl/www.zenwu.site_chain.crt;  # 证书
+    ssl_certificate_key  /home/ssl/www.zenwu.site_key.key;  # 证书
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+    location / {
+        root   /home/www/zenwuhexo/;
+        index  index.html index.htm;
+    }
+}
+```

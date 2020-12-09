@@ -1,0 +1,103 @@
+
+/* fix 202012 */
+
+body {
+    background: url(/images/bg2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.headband {
+  display: none;
+}
+.header-inner,
+.sidebar,
+.post-block {
+  opacity: 0.9;
+}
+.site-brand-container {
+  background: linear-gradient(45deg, #8a159e, #eb0c4f);
+  border-radius: 10px 10px 0 0;
+}
+.main {
+  margin-top: 10px;
+}
+
+/* 图片下描述 */
+.post-body .image-caption, .post-body .figure .caption{
+  margin-top: -10px;
+  font-weight:normal;
+}
+
+
+.footer-inner,
+.footer-inner a {
+  color: #f1f2f4;
+  border:none;
+}
+.footer-inner img{display: inline;}
+.sidebar{
+  border-radius: 10px 10px 10px 10px;
+}
+.back-to-top.back-to-top-on {
+  border-radius: 0px 0px 10px 10px;
+}
+/* 去掉线条 */
+.post-body h1,
+.post-body h2,
+.post-body h3{border:none;}
+
+
+.posts-expand .post-title {
+  font-weight:bold;
+}
+.posts-expand .post-header {
+    margin-bottom: 30px;
+}
+
+.search-active .header-inner{  opacity: 1;}
+@media (max-width: 767px){
+.post-block { 
+  margin:10px 10px 0 10px !important;
+  }
+.header-inner{
+  margin:0px 10px 0 10px !important;
+  }
+}
+
+
+@media (max-width: 991px){
+.header-inner {
+  border-radius: 10px;
+  margin:0px 10px 0 10px !important;
+    }
+}
+
+.links-of-blogroll{
+  text-align:left;
+  margin:0 5px;
+  margin-top:15px;
+  font-size:12px;
+}
+.links-of-blogroll-title{
+  text-align:center;
+}
+.links-of-blogroll-list{
+  color: #999;
+  white-space: normal !important;
+  text-align: left !important;
+  list-style-type: disc !important;
+}
+
+.links-of-blogroll-list li{
+  margin-left: 15px;
+}
+
+.links-of-blogroll-list li time{
+  font-style: italic;
+}
+.passage-end-tag{
+  text-align:center;
+  color: #e09aa7 ;
+}

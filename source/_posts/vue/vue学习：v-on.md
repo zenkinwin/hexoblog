@@ -1,0 +1,169 @@
+---
+title: vue学习：v-on
+categories:
+  - vue
+tags:
+  - v-on
+  - vue
+abbrlink: vue/e71c
+date: 2020-11-22 02:16:41
+---
+
+`v-on`就是用于***绑定事件***的，例如：有个按钮，当点击的时候执行一些操作。
+
+```
+<div class="app">
+    <button v-on:click="myclick">click me</button>
+</div>  
+```
+
+上述代码中，`v-on:`后面的值是一个方法，可以写成`myclick()`，没有参数可以写成`myclick`。
+另外这种事件对应的方法不是定义在`data`选项中，而是定义在`vue`实例的`methods`选项中，里面都是一个一个的`function`。
+
+```
+var app = new Vue({
+    el:'.app',
+    data:{
+    },
+    methods:{
+        myclick:function(){
+            console.log(111111);
+        }
+    }
+});
+```
+
+`v-on`也可以绑定多个事件，多个事件可以单独多个v-on绑定。
+
+```
+<div class="app">
+    <button v-on:mouseenter='onenter' v-on:mouseleave='leave'>click me</button>
+</div>
+```
+
+也可以使用一个`v-on`，里头用对象的形式书写，对象的键名就是事件名，对象的键值就是对应事件要执行的方法。多个事件之间通过`,`分开。
+
+```
+<div class="app">
+    <button v-on="{mouseenter:onenter,mouseleave:leave}">click me</button>
+</div>
+```
+
+当然也可以混合使用：
+
+```
+<div class="app">
+    <button v-on="{mouseenter:onenter,mouseleave:leave}" v-on:click="myclick">click me</button>
+</div>
+```
+
+但是需要注意，在`vue`实例中方法一定要有，不然就报错。
+
+```
+var app = new Vue({
+    el:'.app',
+    data:{
+    },
+    methods:{
+        myclick:function(){
+            console.log("clicked");
+        },
+        onenter:function(){
+            console.log("mouseented");
+        },
+        leave:function(){
+            console.log("mouseleaved");
+        }
+    }
+});
+```
+
+例子：在绑定form表单中的提交事件时
+
+``` html
+<div class="app">
+    <form v-on:submit='onSubmit($event)'>
+        <!-- $event是vue里面的事件对象，vue能认识 -->
+        <input type="text" >
+        <button type="submit">提交</button>
+    </form>
+</div>
+```
+
+``` javascript
+var app = new Vue({
+    el:'.app',
+    data:{
+    },
+    methods:{
+        onSubmit:function(e){
+            e.preventDefault();
+            //阻止浏览器的默认行为，因为在表单提交的时候，浏览器会默认发送一个get或者post请求到指定页面，刷新整个页面。
+            console.log("onSubmited");
+        }
+    }
+});
+```
+
+注意：
+`$event`是`vue`里面的事件对象，`vue`能认识。
+在表单提交的时候，浏览器会默认发送一个`get`或者`post`请求到指定页面，刷新整个页面。阻止浏览器的默认行为，可以用事件对象`e.preventDefault()`
+
+但像上述form表单提交的这种浏览器默认事件，每次都要写`e.preventDefaul()`其实还是比较麻烦。vue中可以更好的解决，只要在事件的后面添加一个`prevent`修饰符即可，表示阻止默认事件。
+
+``` html
+<div class="app">
+    <form v-on:submit.prevent='onSubmit'>
+        <input type="text" >
+        <button type="submit">提交</button>
+    </form>
+</div>
+```
+
+``` javascript
+var app = new Vue({
+    el:'.app',
+    data:{
+    },
+    methods:{
+        onSubmit:function(){
+            console.log("onSubmited");
+        }
+    }
+});
+```
+
+绑定事件中，除了`prevent`修饰符，还有`stop`，表示停止冒泡事件。
+
+```
+<div class="app">
+    <div v-on:click.stop='onClick'>
+    </div>
+</div>
+```
+
+另外,当绑定的事件是`keyup、keypress、keydown`键盘事件时，当需要判断按下是回车时。
+在以前我们需要判断事件对象的`keyCode`，虽然功能特别简单，但是每次去写还是特别麻烦。所以对应也有修饰符，如`enter`修饰符，表示按键是`enter`键。
+
+```
+<div class="app">
+    <div v-on:keydown.enter='mykeydownFn'>
+    </div>
+</div>  
+```
+
+跟`v-bind`一样，`v-on`也非常常用，对应也有快捷方式：
+**v-on:事件名** 可以简写为 **@事件名**
+
+```
+<div class="app">
+    <div @keydown.enter='mykeydownFn'>
+    </div>
+</div>
+```
+
+---
+
+作者：jCodeLife
+链接：https://www.jianshu.com/p/5d2ca05b70b3
+来源：简书
