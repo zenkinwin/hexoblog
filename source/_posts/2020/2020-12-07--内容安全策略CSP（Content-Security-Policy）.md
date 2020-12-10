@@ -13,7 +13,7 @@ date: 2020-12-07 23:43:16
 
 在[SiteAzure](http://www.powereasy.net/products/siteazure)的3.0版本配置文件`web.config`中，增加了这个防XSS的神器。
 
-``` c
+``` yaml
 <add name="Content-Security-Policy" value="
 script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: *.map.baidu.com 
 *.bdimg.com bdimg.share.baidu.com res.wx.qq.com pucha.kaipuyun.cn 
