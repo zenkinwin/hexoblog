@@ -30,7 +30,6 @@ body {
   font-weight:normal;
 }
 
-
 .footer-inner,
 .footer-inner a {
   color: #f1f2f4;
@@ -48,7 +47,6 @@ body {
 .post-body h2,
 .post-body h3{border:none;}
 
-
 .posts-expand .post-title {
   font-weight:bold;
 }
@@ -64,6 +62,9 @@ body {
 .header-inner{
   margin:0px 10px 0 10px !important;
   }
+  .post-gallery{
+  display: none;
+  }
 }
 
 
@@ -72,6 +73,9 @@ body {
   border-radius: 10px;
   margin:0px 10px 0 10px !important;
     }
+    .post-gallery{
+      display: none;
+      }
 }
 
 .links-of-blogroll{
@@ -101,3 +105,32 @@ body {
   text-align:center;
   color: #e09aa7 ;
 }
+/* 图片 */
+.post-gallery{
+  margin:-40px -40px 30px -40px !important;
+}
+.post-gallery-image{
+  overflow:hidden;  
+  border-radius: 10px 10px 0 0 ;
+}
+.post-gallery-image img{
+  transition: transform 1s ease-out;
+}
+
+.post-gallery-image img:hover {
+  transform: scale(1.05);
+}
+
+.archive,.tag,.category{
+
+  .post-gallery{
+    margin:15px 0 !important;
+    min-height: 80px;
+  }
+  .post-gallery-image{
+    overflow:hidden;  
+    border-radius: 10px ;
+  }
+}
+
+

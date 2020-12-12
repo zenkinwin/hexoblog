@@ -7,8 +7,8 @@ tags:
   - Referrer Policy
 abbrlink: b690
 date: 2020-12-10 23:03:06
+photos: https://cdn.zenwu.site/upload/pic/2020/20201213000022.png
 ---
-
 ### 1. Referrer
 
 `referrer`是HTTP请求`header`的报文头，用于**指明当前流量的来源参考页面**。通过这个信息，我们可以知道访客是怎么来到当前页面的。这对于网站分析（Web Analytics）非常重要，可以用于分析不同渠道流量分布、用户搜索的关键词等。
