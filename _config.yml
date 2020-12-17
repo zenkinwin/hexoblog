@@ -58,13 +58,13 @@ highlight:
 index_generator:
   path: ''
   per_page: 20
-  order_by: -date
+  order_by: -updated  ##-date  
 
 #归档页的分页设置
 archive_generator:
   per_page: 30
   yearly: true
-  #monthly: true
+  monthly: true
 
 # Category & Tag
 default_category: uncategorized
@@ -82,7 +82,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## Use post's date for updated date unless set in front-matter
-updated_option: false
+updated_option: true
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -98,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: NexT
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

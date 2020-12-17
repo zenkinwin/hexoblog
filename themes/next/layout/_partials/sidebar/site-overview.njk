@@ -22,11 +22,6 @@
   };i()
   };binft(document.getElementById('binft'));</script>
 
-
-
-  
-  
-  
   </div>
 </div>
 
@@ -135,25 +130,27 @@
 {%- endif %}
 
 
+
 {% if theme.recent_posts %}
-    <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.recent_posts_layout  }}">
+    <div class="recent_posts links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.recent_posts_layout  }}">
       <div class="links-of-blogroll-title">
-        <!-- modify icon to fire by szw -->
         <i class="fa fa-history fa-{{ theme.recent_posts_icon | lower }}" aria-hidden="true"></i>
         {{ theme.recent_posts_title }}
       </div>
       <ul class="links-of-blogroll-list">
         {% set posts = site.posts.sort('-updated').toArray() %}
-        {% for post in posts.slice('0', '3') %}
+        {% for post in posts.slice('0', '1') %}
           <li>
             <a href="{{ url_for(post.path) }}" title="{{ post.title }}" target="_blank">{{ post.title }}</a>
-
-<time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
-
-
+            <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
           </li>
         {% endfor %}
       </ul>
     </div>
 {% endif %}
 
+
+
+  <div class="archive_side site-overview-wrap sidebar-panel">
+    {{ partial('_partials/sidebar/archive.njk', {}, {cache: theme.cache.enable}) }}
+  </div>

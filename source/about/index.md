@@ -2,10 +2,10 @@
 title: 关于
 date: 2017-02-12
 type: "about"
-toc: false
-sidebar: remove
 comments: false
 layout: page
+toc:
+  enable: false
 description: 说明一下
 ---
 
