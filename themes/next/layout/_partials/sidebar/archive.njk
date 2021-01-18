@@ -1,15 +1,12 @@
 
-
-
 <div class="links-of-blogroll">
-<div class="links-of-blogroll-title">
-<i class="fa fa-archive" aria-hidden="true"></i>
-归档列表
-</div>
-
-<div class="links-of-blogroll-list">
-{{ list_archives({show_count: true, type: yearly }) }}
-</div>
+    <div class="links-of-blogroll-title">
+    <i class="fa fa-archive" aria-hidden="true"></i>
+    归档列表
+    </div>
+    <div class="links-of-blogroll-list">
+    {{ list_archives({show_count: true, type: yearly,format: 'YYYY年MM月' }) }}
+    </div>
 
 </div>
 
