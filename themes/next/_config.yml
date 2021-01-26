@@ -81,10 +81,10 @@ creative_commons:
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # External url should start with http:// or https://
 menu:
-   #首页: / || fa fa-home
+   首页: / || fa fa-home
    categories: /categories/ || fa fa-th
    archives: /archives/ || fa fa-archive
-   #tags: /tags/ || fa fa-tags
+   tags: /tags/ || fa fa-tags
    about: /about/ || fa fa-user
   #categories: /categories/ || fa fa-th
   #schedule: /schedule/ || fa fa-calendar
@@ -142,8 +142,8 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   #GitHub: https://github.com/zenkinwin || fab fa-github
-  ##QQ: tencent://message/?uin=43002111&Site=zenwu&Menu=yes || fab fa-qq
-  ##E-Mail: mailto:zenkin@163.com || fa fa-envelope
+  #QQ: tencent://message/?uin=43002111&Site=zenwu&Menu=yes || fab fa-qq
+  E-Mail: mailto:zenkin@163.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -201,7 +201,7 @@ language_switcher: false
 
 footer:
   # Specify the year when the site was setup. If not defined, current year will be used.
-  #since: 2002
+  since: 2002
 
   # Icon between year and copyright info.
   icon:

@@ -14,7 +14,6 @@
   "dependencies": {
     "hexo": "^5.0.0",
     "hexo-abbrlink": "^2.2.1",
-    "hexo-baidu-url-submit": "0.0.6",
     "hexo-blog-encrypt": "^3.0.13",
     "hexo-deployer-git": "^2.1.0",
     "hexo-filter-flowchart": "^1.0.4",
@@ -38,6 +37,7 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
     "hexo-symbols-count-time": "^0.7.1",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-wordcount": "^6.0.1",
+    "stylus": "^0.54.8"
   }
 }

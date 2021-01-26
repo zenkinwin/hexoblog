@@ -1,27 +1,31 @@
 
-
-——————————————————
-发文方面
-
 1、学习总结图片
 上存到CVM里目录 /upload/
 内网总结目录：/upload/compowereasynet/images/
 插入：![202010261504573708](/upload/compowereasynet/images/202010261504573708.png)
+
+// hexo_resize_image.js-master
+![指定像素](/image/test.jpg?200x200)
+![仅指定width](/image/test.jpg?200x)
+![指定比例](/image/test.jpg?40)
 
 1.1 已都上存到又拍云，位置：
 https://cdn.zenwu.site/upload/pic/compowereasynet/
 https://cdn.zenwu.site/upload/pic/compowereasynet/202010261504573708.png
 
 2、插图到其他地方，默认到又拍云，cdn.zenwu.site
-又拍云 key
-RwB0Yip10RoVl8KY225P1EvvjRfApzmn
+又拍云 key RwB0Yip10RoVl8KY225P1EvvjRfApzmn
 
-3、发文不要toc
-toc:
+
+更改颜色
+灰色：class=gray
+——————————————————
+toc: ## 发文不要toc
   enable: false
+updated： ## 更新
 
-4、 
 
+——————————————————
 
 
 5、
