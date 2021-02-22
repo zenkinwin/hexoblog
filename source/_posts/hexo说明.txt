@@ -1,5 +1,5 @@
 
-1、学习总结图片
+1、学习总结图片1
 上存到CVM里目录 /upload/
 内网总结目录：/upload/compowereasynet/images/
 插入：![202010261504573708](/upload/compowereasynet/images/202010261504573708.png)
