@@ -173,3 +173,24 @@ body {
 .post-body blockquote ul{margin-left:-15px;}
 .post-body blockquote code{font-size:14px; }
 .gray{color:gray;}
+
+
+
+.category-all .category-list{
+    list-style: decimal;
+}
+
+.category-all .category-list span { /* 折叠菜单选中项的标题样式 */
+    color: #e6efee;
+    background-color: #393c4b;
+    display: inline-block;
+
+}
+
+.category-all .category-list ul.category-list-child { /* 子菜单平时不显示 */
+    display: none;
+}
+
+.category-all .category-list ul.selected{
+    display: block;
+}

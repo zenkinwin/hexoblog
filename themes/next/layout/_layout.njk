@@ -51,5 +51,15 @@
   {%- if theme.pjax %}
     </div>
   {%- endif %}
+
+<script>
+
+  $("ul.category-all .category-list-count").on('click', function () {
+      $(this).parent().siblings().removeClass('selected').find('ul').hide();
+      $(this).parent().addClass('selected');
+      $(this).next().slideDown(500);
+  });
+
+</script>
 </body>
 </html>
