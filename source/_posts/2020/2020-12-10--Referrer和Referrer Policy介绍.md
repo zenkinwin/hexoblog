@@ -1,6 +1,7 @@
 ---
 title: Referrer和Referrer Policy介绍
 categories:
+  - 前端技术的知识章节
   - 前端
 tags:
   - Referrer

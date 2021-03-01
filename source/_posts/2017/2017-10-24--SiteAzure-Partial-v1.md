@@ -1,12 +1,14 @@
 ---
 title: SiteAzure-Partial-v1 20171024
 categories:
+  - 前端技术的知识章节
   - 前端
 tags:
   - vs code
   - SiteAzure
 abbrlink: b51e
 date: 2017-10-24 19:08:38
+updated: 2017-10-24 19:08:38
 ---
 
 

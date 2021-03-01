@@ -1,11 +1,13 @@
 ---
 title: 'js中const,var,let区别与用法'
 categories:
+  - 前端技术的知识章节
   - javascript
 tags:
   - javascript
 abbrlink: javascript/5abf
 date: 2020-11-24 22:16:41
+updated: 2020-11-24 22:16:41
 ---
 
 

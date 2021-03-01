@@ -1,7 +1,7 @@
 ---
 title: 备--the-terrible-work（2005-2008）
 categories:
-  - 乱七八糟
+  - 其他
 tags:
   - 工作
   - 记录

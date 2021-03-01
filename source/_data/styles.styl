@@ -175,22 +175,39 @@ body {
 .gray{color:gray;}
 
 
+.category-all {margin-left:30%;min-height:490px;}
 
 .category-all .category-list{
-    list-style: decimal;
-}
-
-.category-all .category-list span { /* 折叠菜单选中项的标题样式 */
-    color: #e6efee;
-    background-color: #393c4b;
-    display: inline-block;
-
+    list-style: circle;
 }
 
 .category-all .category-list ul.category-list-child { /* 子菜单平时不显示 */
-    display: none;
+    display:none;
 }
 
-.category-all .category-list ul.selected{
-    display: block;
+.category-all .category-list-count {
+    color: #999;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0px 3px;
+    border-radius: 10px;
+    
 }
+.category-all .plus{
+    color:#fff;
+    background-color: #9b2095;
+    font-weight: bold;
+}
+.category-all .plus:after{
+        content: ')  +';
+    }
+
+.category-all .plus.minus {
+    }
+
+.category-all .minus:after {
+        content: ')  -';
+    }
+
+

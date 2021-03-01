@@ -1,6 +1,7 @@
 ---
 title: gitignore 不起作用的解决办法
 categories:
+  - 前端技术的知识章节
   - 前端
 tags:
   - git

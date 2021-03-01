@@ -1,6 +1,7 @@
 ---
 title: vue学习：v-text，v-html, v-model, {{}}之间的异同
 categories:
+  - 前端技术的知识章节
   - vue
 tags:
   - v-text
@@ -9,6 +10,7 @@ tags:
   - vue
 abbrlink: vue/224e
 date: 2020-11-22 23:16:41
+updated: 2020-11-22 23:16:41
 ---
 
 ### 1. v-text

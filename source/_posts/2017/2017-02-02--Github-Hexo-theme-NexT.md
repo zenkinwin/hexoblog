@@ -1,6 +1,7 @@
 ---
 title: Github-Hexo-theme-NexT
 categories:
+  - 前端技术的知识章节
   - Hexo
 tags:
   - Github
@@ -8,6 +9,7 @@ tags:
   - NextT
 abbrlink: 1be4
 date: 2017-02-02 00:00:00
+updated: 2017-02-02 00:00:00
 ---
 
 上月介绍了Git+jekyll，托管在码云（git@osc）上，然而并不尽兴，事实上Git+Hexo会更便捷（对window用户而言），jekyll是ruby编写，而hexo是nodejs 。  

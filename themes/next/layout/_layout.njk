@@ -52,13 +52,29 @@
     </div>
   {%- endif %}
 
-<script>
 
-  $("ul.category-all .category-list-count").on('click', function () {
-      $(this).parent().siblings().removeClass('selected').find('ul').hide();
-      $(this).parent().addClass('selected');
-      $(this).next().slideDown(500);
-  });
+
+<script>
+$(function() {
+
+        $(".category-list-item").each(function() {
+            if ($(this).children("ul").length > 0){
+                console.log($(this).children("ul").length)
+                //如果有ul，添加样式
+                $(this).children(".category-list-count").addClass("plus");
+            }
+        });
+
+        $(".category-list-item .plus").click(function(){
+            if( $(this).next("ul").is(":hidden")){
+                $(this).next("ul").show(0);
+                $(this).addClass("minus");
+            }else{
+                $(this).next("ul").hide(0);
+                $(this).removeClass("minus");
+            }
+        });
+    })
 
 </script>
 </body>

@@ -1,12 +1,14 @@
 ---
 title: 内容安全策略CSP（Content-Security-Policy）
 categories:
+  - 前端技术的知识章节
   - 前端
 tags:
   - 内容安全策略
   - csp
 abbrlink: '6137'
 date: 2020-12-07 23:43:16
+updated: 2020-12-07 23:43:16
 ---
 
 内容安全策略，Content-Security-Policy，缩写 CSP，其核心思想十分简单：网站通过发送一个 CSP 头部，来告诉浏览器**什么是被授权执行的与什么是需要被禁止的**。其被誉为专门**为解决XSS攻击而生的神器**。

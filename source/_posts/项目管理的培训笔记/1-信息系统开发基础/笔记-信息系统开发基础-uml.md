@@ -4,7 +4,6 @@ categories:
   - 项目管理的培训笔记
   - 信息系统开发基础
 tags:
-  - 信息系统开发基础
   - uml
 abbrlink: 1b4a
 date: 2020-04-25 21:50:02

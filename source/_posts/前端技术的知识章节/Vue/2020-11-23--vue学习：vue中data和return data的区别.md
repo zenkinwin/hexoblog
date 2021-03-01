@@ -1,12 +1,13 @@
 ---
 title: vue学习：vue中data和return data的区别
 categories:
+  - 前端技术的知识章节
   - vue
 tags:
   - data
   - vue
 abbrlink: 'vue/7e25'
-date: 2020-11-23 23:14:12
+updated: 2020-11-23 23:14:12
 ---
 
 在简单的vue实例中看到的Vue实例中data属性是如下方式展示的：

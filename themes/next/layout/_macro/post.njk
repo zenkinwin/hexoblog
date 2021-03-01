@@ -14,6 +14,16 @@
       <meta itemprop="description" content="{{ description }}">
     </span>
 
+{% if post.cnblogs %}
+
+    <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+            <i class="fas fa-rss"></i>
+        </span>
+    <span class="post-meta-item-text" id="cnblogs_sync_text"><a href="https://www.cnblogs.com/zenkin/">博客园</a> 同步已开启</span>
+    </span>
+{% endif %}
+
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ title }}">
     </span>

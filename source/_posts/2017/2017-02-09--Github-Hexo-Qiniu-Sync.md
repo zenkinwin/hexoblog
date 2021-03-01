@@ -1,6 +1,7 @@
 ---
 title: Github-Hexo-Qiniu-Sync
 categories:
+  - 前端技术的知识章节
   - Hexo
 tags:
   - Github
@@ -8,6 +9,7 @@ tags:
   - 七牛
 abbrlink: e76
 date: 2017-02-09 09:46:58
+updated: 2017-02-09 09:46:58
 ---
 
 原文GitHub插件：

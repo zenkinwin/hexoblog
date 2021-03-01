@@ -1,11 +1,13 @@
 ---
 title: Linux nginx 启动关闭重启教程
 categories:
+  - 前端技术的知识章节
   - Linux
 tags:
   - linux
 abbrlink: '7144'
 date: 2020-11-09 23:57:30
+updated: 2020-11-09 23:57:30
 ---
 
 centos环境，nginx目录`/usr/local/nginx/sbin/`

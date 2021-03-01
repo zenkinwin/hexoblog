@@ -1,12 +1,14 @@
 ---
 title: Centos维护Nginx
 categories:
+  - 前端技术的知识章节
   - Linux
 tags:
   - linux
   - nginx
 abbrlink: 47c0
 date: 2020-11-11 23:47:13
+updated: 2020-11-11 23:47:13
 ---
 
 

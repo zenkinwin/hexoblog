@@ -1,12 +1,14 @@
 ---
 title: Visual Studio Code 常用快捷键
 categories:
+  - 前端技术的知识章节
   - 前端
 tags:
   - vs code
   - 快捷键
 abbrlink: 15b3
 date: 2017-04-03 23:08:38
+updated: 2017-04-03 23:08:38
 ---
 
 详细阅读吧 ↓ ↓ ↓

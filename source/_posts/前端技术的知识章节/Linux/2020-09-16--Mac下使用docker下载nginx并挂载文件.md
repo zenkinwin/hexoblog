@@ -1,12 +1,14 @@
 ---
 title: Mac下使用docker下载nginx并挂载文件
 categories:
+  - 前端技术的知识章节
   - Linux
 tags:
   - docker
   - nginx
 abbrlink: efd0
 date: 2020-09-16 00:12:22
+updated: 2020-09-16 00:12:22
 ---
 
 Mac下使用docker下载nginx并挂载文件。

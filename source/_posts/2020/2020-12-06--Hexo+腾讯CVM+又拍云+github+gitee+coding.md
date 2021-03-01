@@ -1,6 +1,7 @@
 ---
 title: Hexo+腾讯CVM+又拍云+github+gitee+coding
 categories:
+  - 前端技术的知识章节
   - Hexo
 tags:
   - Hexo
@@ -8,6 +9,7 @@ tags:
   - 又拍云
 abbrlink: 298c
 date: 2020-12-06 20:53:39
+updated: 2020-12-06 20:53:39
 ---
 
 
