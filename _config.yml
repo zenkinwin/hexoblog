@@ -107,9 +107,9 @@ deploy:
     repo: https://gitee.com/zenkin/zenkin.git
     branch: master
 
-  # - type: git #github
-  #   repo: https://github.com/zenkinwin/zenkinwin.github.io.git
-  #   branch: master
+  - type: git #github
+    repo: https://github.com/zenkinwin/zenkinwin.github.io.git
+    branch: master
 
   - type: git #coding
     repo: https://e.coding.net/zenkin/zenkin/hexo.git
