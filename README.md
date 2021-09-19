@@ -3,7 +3,7 @@
 ## Intro
 
 基于[Hexo](https://hexo.io/)的博客
-**Zen.Wu Blog**，[www.zenwu.site](https://www.zenwu.site)[www.zenkin.win](https://www.zenkin.win)
+**Zen.Wu Blog**，[www.zenwu.site](https://www.zenwu.site)
 
 Hosted by coding pages
 Upyun 提供CDN加速/图片储存服务

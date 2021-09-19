@@ -14,7 +14,6 @@ Mac下使用docker下载nginx并挂载文件。
 也发到另外csdn：<https://blog.csdn.net/zenkin/article/details/108612594>
 
 <!-- more -->
-
 ## 一、docker for macr客户端
 
 - 对于10.10.3以上的用户 推荐使用 Docker for Mac [http://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/](http://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/)
