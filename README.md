@@ -10,6 +10,7 @@ Upyun 提供CDN加速/图片储存服务
 
 backups：
 
+- CVM: https://www.zenwu.site
 - coding: https://www.zenwu.site
 - github: http://zenkinwin.github.io/
 - gitee: https://zenkin.gitee.io/  
