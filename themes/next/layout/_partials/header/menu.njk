@@ -3,6 +3,8 @@
 {%- if theme.menu or theme.algolia_search.enable or theme.local_search.enable %}
 <nav class="site-nav">
   <ul class="main-menu menu">
+
+  
     {%- for name, path in theme.menu %}
       {%- set respath = path %}
       {%- if path == '[object Object]' %}
@@ -22,6 +24,7 @@
       {%- endif %}
     {%- endfor %}
 
+
     {%- if theme.algolia_search.enable or theme.local_search.enable %}
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger">
@@ -30,5 +33,14 @@
       </li>
     {%- endif %}
   </ul>
+
+<div class="sidebar-category-all">
+  {{ list_categories({
+    orderby: 'length',
+    order: -1,
+    show_count: true
+    }) 
+  }}
+</div>
 </nav>
 {%- endif %}

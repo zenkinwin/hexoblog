@@ -14,6 +14,7 @@
       <meta itemprop="description" content="{{ description }}">
     </span>
 
+{# cnblog推送测试 #}
 {% if post.cnblogs %}
 
     <span class="post-meta-item">
@@ -58,7 +59,7 @@
           {{ partial('_partials/post/post-meta.njk') }}
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
-            <div class="post-description">{{ post.description }}</div>
+            <div class="post- ">{{ post.description }}</div>
           {%- endif %}
         </div>
       </header>
@@ -92,6 +93,7 @@
           {%- endif %}
           <!--/noindex-->
         {% else %}
+          {# 202109 index 去掉全文的内容 #   {{ post.content }} #}
           {{ post.content }}
         {%- endif %}
       {% else %}
