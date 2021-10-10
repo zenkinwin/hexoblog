@@ -6,6 +6,4 @@ node_modules/
 public/
 .deploy*/
 .vscode/
-
-/cnblogs-post-master/
-/hexo-cnblogs-sync-master/
+*.yml
