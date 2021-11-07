@@ -7,9 +7,10 @@ tags:
   - itto
 abbrlink: 24d0
 date: 2020-05-24 23:57:49
+updated: 2021-10-23 14:57:49
 ---
 
-高项的项目管理ITTO（PMP第三版），详细汇总。
+高项的项目管理ITTO（PMBOK第五版），详细汇总。
 <!-- more -->
 
 <table border="1" cellspacing="0"><tbody><tr><td style="text-align:center;vertical-align:middle;width:130px;"><span style="color:#000000;"><strong>分类</strong></span></td>
@@ -428,7 +429,7 @@ date: 2020-05-24 23:57:49
 5.</span><span style="color:#198a2f;">组织过程资产</span></span></td>
 <td style="vertical-align:middle;width:168px;"><span style="color:#000000;">1.信息管理系统<br>
 2.<span style="color:#ff0000;">专家判断</span><br><span style="color:#000000;">3.</span><span style="color:#26da2a;">会议</span></span></td>
-<td style="vertical-align:middle;width:169px;"><span style="color:#000000;">1.工作效信息<br>
+<td style="vertical-align:middle;width:169px;"><span style="color:#000000;">1.工作绩效信息<br>
 2.<span style="color:#fa3cef;">变更请求</span><br><span style="color:#000000;">3.</span><span style="color:#3236c9;">项目管理计划</span><span style="color:#000000;">更新<br>
 4.</span><span style="color:#f7860c;">项目文件更新</span><br><span style="color:#000000;">5.</span><span style="color:#198a2f;">组织过程资产更新</span></span></td>
 </tr>
