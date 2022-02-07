@@ -46,7 +46,6 @@ description:
 
 <div style="text-align:right">———— 2020年4月27日</div>
 
-
 ---
 
 ### 那些更遥远的故事
@@ -78,6 +77,7 @@ description:
 
 - 2018年，PMP，Get!
 - 2020年，软考-信息系统项目管理师（高级），Get!
+- 2021年，软考-系统集成项目管理工程师（中级），Get!
+- 2022年，系分、产品、还是安全?
 
-<div style="text-align:right">2021年8月</div>
-
+<div style="text-align:right">2021年12月</div>
